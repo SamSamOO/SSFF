@@ -13,7 +13,7 @@
     </Appenders>
 
     <Loggers>
-        <Logger name="org.zerock.myapp" level="trace" />
+        <Logger name="org.zerock.myapp" level="info" />
 	
 		<!-- 3rdparty Loggers -->
 		<logger name="org.springframework.core" level="info"/>		
@@ -27,7 +27,7 @@
         </logger>
         
 
-        <Root level="warn">
+        <Root level="info">
             <AppenderRef ref="ConsoleAppender" />
         </Root>
     </Loggers>

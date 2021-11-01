@@ -2,7 +2,7 @@
 <%@ page session="false" %>
 <html>
 <head>
-	<title>Home</title>
+	<title>메인화면입니다.</title>
 </head>
 <body>
 <h1>
