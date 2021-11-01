@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Handles requests for the application home page.
  * 테스트!
  */
+
 @Controller
 public class HomeController {
 	
@@ -24,6 +25,7 @@ public class HomeController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
+
 
 	/*메인 화면 입닌다.*/
 	@GetMapping("/")
