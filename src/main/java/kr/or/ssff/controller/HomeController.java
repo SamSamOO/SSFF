@@ -25,7 +25,7 @@ public class HomeController {
 	 * Simply selects the home view to render by returning its name.
 	 */
 
-	/*메인 화면 입닌다.*/
+	/*메인 화면 입니다.*/
 	@GetMapping("/")
 	public String home() {
 		return "main";
