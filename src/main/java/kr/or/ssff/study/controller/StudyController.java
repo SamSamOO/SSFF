@@ -206,10 +206,39 @@ public class StudyController {
         return "redirect:/study/project/list";
     } // deleteProjectDetail
 
-    /*댓글 작성
+    /*댓글 작성 기능 수행
      * 파라메터 :
-     * 반환 :
+     * 반환 : //TODO --예솔
      * */
+    @PostMapping("/comment/post")
+    public String insertComment() {
+        log.info("insertComment() is invoked");
+
+        return "";
+    }
+
+    /*댓글 수정 기능 수행
+     * 파라메터 :
+     * 반환 : //TODO --예솔
+     * */
+    @PostMapping("/comment/modify")
+    public String updateComment() {
+        log.info("updateComment() is invoked");
+
+        return "";
+    }
+
+    /*댓글삭제 기능 수행
+     *파라메터 :
+     * 반환 :
+     * //TODO --예솔
+     * */
+    @PostMapping("/comment/remove")
+    public String deleteComment() {
+        log.info("deleteComment() is invoked");
+
+        return "";
+    }
 } // end class
 
 
