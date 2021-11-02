@@ -117,11 +117,29 @@ public class ManagerController {
         return "manager/member/archive/payment";
     } // selectTransactionList
 
-    /*스터디 목록
-    * 파라메터 :
-    *
-    * */
+    /*스터디 목록 조회 (회원의 모든 스터디 목록을 확인 할 수 있습니다)
+     * 파라메터 :
+     *반환 :
+     * */
+    @GetMapping("/study/list")
+    public String selectStudyList() {
+        log.info("selectStudyList() is invoked");
 
+        return "manager/study/list";
+    }
+
+    /*스터디별 상세 정보 조회 (회원의 스터디 목록중 하나에 대한 상세 정보를 조회합니다)
+     * 파라메터 :
+     * 반환 :
+     * */
+    @GetMapping("/study/info")
+    public String selectStudyMain() {
+        log.info("selectStudyMain() is invoked");
+
+        return "manager/study/info";
+    }
+
+    /**/
 } // end class
 
 

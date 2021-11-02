@@ -23,7 +23,7 @@ public class MemberController {
     @Autowired
     private MemberService memberService;
 
-    /*회원가입 페이지 이동 --순형
+    /* 회원가입 페이지 이동 --순형
      * 파라메터  : 없음
      * 회원가입 페이지
      * */
@@ -34,18 +34,18 @@ public class MemberController {
         return "member/join";
     } // memberJoinGo
 
-    /*회원가입 기능 수행 -- 순형
+    /* 회원가입 기능 수행 -- 순형
      * memberVO member -- 멤버정보가 전달됩니다.
      * 메인페이지로 이동합니다.
      * */
     @PostMapping("/join")
-    public String memberJoin(MemberVO member) throws Exception {
+    public String memberJoin(MemberVO member)  {
         log.info("join({}) is invoked", "member = " + member);
 
         return "redirect:/main";
     } // memberJoin
 
-    /*로그인 페이지 이동
+    /* 로그인 페이지 이동
      * 파라메터 : 없음
      * 로그인 페이지
      * */
@@ -56,7 +56,7 @@ public class MemberController {
         return "member/login";
     } // memberLoginGo
 
-    /*로그인 기능 수행
+    /* 로그인 기능 수행
      * 파라메터 :  email , password
      * 메인페이지로 이동합니다.
      * */
@@ -67,7 +67,7 @@ public class MemberController {
         return "redirect:/main";
     } // memberLogin
 
-    /*마이 페이지 이동
+    /* 마이 페이지 이동
      * 파라메터 : nickname
      * 마이 페이지로 이동합니다.
      * */
@@ -78,7 +78,7 @@ public class MemberController {
         return "/member/myPage";
     } // myPageGo
 
-    /*가입한 스터디 목록 페이지로 이동
+    /* 가입한 스터디 목록 페이지로 이동
      * 파라메터 : nickname
      * 스터디 목록 페이지
      * */
@@ -89,7 +89,7 @@ public class MemberController {
         return "/member/studyList";
     } // studyListGo
 
-    /*스터디 카페 예약내역 페이지로 이동합니다
+    /* 스터디 카페 예약내역 페이지로 이동합니다
      * 파라메터 : nickname
      * 스터디 카페 예약내역 페이지
      * */
@@ -100,7 +100,7 @@ public class MemberController {
         return "/member/reservationList";
     } // reservationList
 
-    /*결제내역페이지로 이동합니다.
+    /* 결제 내역 페이지로 이동합니다.
      * 파라메터 :String nickname
      * 결제 내역 페이지
      * */
@@ -111,7 +111,7 @@ public class MemberController {
         return "/member/paymentList";
     } // paymentList
 
-    /*회원탈퇴기능을 수행합니다
+    /* 회원탈퇴기능을 수행합니다
      * 파라메터 : String nickname
      *탈퇴기능 수행 후 메인페이지
      * */
@@ -122,7 +122,7 @@ public class MemberController {
         return "redirect:/main";
     } // withdrawal
 
-    /*아이디/ 비밀번호 찾기 페이지 이동
+    /* 아이디/ 비밀번호 찾기 페이지 이동
      * 파라메터 : String nickname
      * 아이디 / 비밀번호 찾기 페이지
      * */
@@ -133,7 +133,7 @@ public class MemberController {
         return "/member/idPwFind";
     }
 
-    /*거래 내역 조회 페이지로 이동합니다.
+    /* 거래 내역 조회 페이지로 이동합니다.
      * 파라메터 : String nickname
      * 거래 내역 조회 페이지
      * */
