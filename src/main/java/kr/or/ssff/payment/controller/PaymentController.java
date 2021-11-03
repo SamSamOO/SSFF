@@ -82,6 +82,8 @@ public class PaymentController {
   public String cafeReservation(String nickName, String reservationId, PaymentDTO paymentDTO){
 
 
+
+
     return "payment/cafeReservation";
   } // insertChallenge
 
