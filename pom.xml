@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 
 
 <project
@@ -28,6 +28,7 @@
     <org.springframework-version>5.3.11</org.springframework-version>
     <org.aspectj-version>1.9.7</org.aspectj-version>
     <org.slf4j-version>1.7.32</org.slf4j-version>
+
   </properties>
 
 
@@ -263,6 +264,7 @@
         <version>2.10</version>
 
         <configuration>
+
           <additionalProjectnatures>
             <projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
           </additionalProjectnatures>
@@ -273,6 +275,7 @@
 
           <downloadSources>true</downloadSources>
           <downloadJavadocs>false</downloadJavadocs>
+
         </configuration>
       </plugin>
 
@@ -290,8 +293,8 @@
 
           <encoding>${project.build.sourceEncoding}</encoding>
 
-          <source>${java-version}</source>
-          <target>${java-version}</target>
+          <source>11</source>
+          <target>11</target>
 
           <executable>${java-home}\bin\javac</executable>
           <compilerArgs>
