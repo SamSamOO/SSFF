@@ -44,7 +44,7 @@
 <!--begin::Scrolltop-->
 <div id="kt_scrolltop" class="scrolltop">
     <span class="svg-icon">
-<!--begin::Svg Icon | path:/WEB-INF/resources/assets/media/svg/icons/Navigation/Up-2.svg-->
+<!--begin::Svg Icon | path:/resources/assets/media/svg/icons/Navigation/Up-2.svg-->
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
      height="24px" viewBox="0 0 24 24" version="1.1">
 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -133,13 +133,13 @@
 </script>
 <!--end::Global Config-->
 <!--begin::Global Theme Bundle(used by all pages)-->
-<script src="/WEB-INF//WEB-INF/resources/assets/plugins/global/plugins.bundle.js"></script>
-<script src="/WEB-INF//WEB-INF/resources/assets/plugins/custom/prismjs/prismjs.bundle.js"></script>
-<script src="/WEB-INF/resources/assets/js/scripts.bundle.js"></script>
+<script src="/resources/assets/plugins/global/plugins.bundle.js"></script>
+<script src="/resources/assets/plugins/custom/prismjs/prismjs.bundle.js"></script>
+<script src="/resources/assets/js/scripts.bundle.js"></script>
 <!--end::Global Theme Bundle-->
 <!--begin::Page Vendors(used by this page)-->
-<script src="/WEB-INF//WEB-INF/resources/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
+<script src="/resources/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
 <!--end::Page Vendors-->
 <!--begin::Page Scripts(used by this page)-->
-<script src="/WEB-INF/resources/assets/js/pages/widgets.js"></script>
+<script src="/resources/assets/js/pages/widgets.js"></script>
 <!--end::Page Scripts-->
