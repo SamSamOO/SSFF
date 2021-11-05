@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class CafeController{
 
+
   /*
    * 스터디 카페 리스트를 조회
    * 매개변수:
