@@ -10,7 +10,7 @@
 <div id="kt_header_mobile" class="header-mobile">
     <!--로고 시작-->
     <a href="index.html">
-        <img alt="Logo" src="/WEB-INF/resources/assets/media/logos/logo-c1.png" class="max-h-30px" />
+        <img alt="Logo" src="/resources/assets/media/logos/logo-c1.png" class="max-h-30px" />
     </a>
     <!--로고 종료-->
     <!--툴바 시작-->
@@ -25,7 +25,7 @@
             <div class="topbar-item" data-toggle="dropdown" data-offset="0px,0px">
                 <div class="btn btn-dropdown top-memu">
                     <!--유저 프로필 사진-->
-                    <img src="/WEB-INF/resources/assets/media/users/300_21.jpg" alt="" />
+                    <img src="/resources/assets/media/users/300_21.jpg" alt="" />
                     <i class="text-dark fas fa-angle-down"></i>
                 </div>
 
@@ -113,7 +113,7 @@
         <div class="d-none d-lg-flex align-items-center mr-3">
             <!--begin::Logo-->
             <a href="index.html" class="mr-20">
-                <img alt="Logo" src="/WEB-INF/resources/assets/media/logos/logo-c1.png" class="logo-default max-h-35px" />
+                <img alt="Logo" src="/resources/assets/media/logos/logo-c1.png" class="logo-default max-h-35px" />
             </a>
             <!--end::Logo-->
         </div>
@@ -126,7 +126,7 @@
                 <div class="topbar-item" data-toggle="dropdown" data-offset="0px,0px">
                     <div class="btn btn-dropdown top-memu">
                         <!--유저 프로필 사진-->
-                        <img src="/WEB-INF/resources/assets/media/users/300_21.jpg" alt="" />
+                        <img src="/resources/assets/media/users/300_21.jpg" alt="" />
                         <!--유저 닉네임(비로그인시 숨김)-->
                         <div class="text-dark m-0 flex-grow-1 mr-3 font-size-h5">유저 닉네임 </div>
                         <i class="text-dark fas fa-angle-down"></i>
