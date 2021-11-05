@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 /*
 
  */
-@RequestMapping("/study/*")
+@RequestMapping("/study")
 @Log4j2
 
 @NoArgsConstructor
@@ -239,6 +239,7 @@ public class StudyController {
 
         return "";
     }
+
 } // end class
 
 
