@@ -20,10 +20,11 @@
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
-	
+
 	<context:component-scan base-package="kr.or.ssff.controller" />
 
-
-	
+	<!--예솔 작업-->
+	<context:component-scan base-package="kr.or.ssff.study.controller" />
+	<context:component-scan base-package="kr.or.ssff.study.service" />
 	
 </beans:beans>
