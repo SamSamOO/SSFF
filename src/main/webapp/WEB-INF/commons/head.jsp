@@ -84,4 +84,4 @@
 </script>
 <!--begin::Layout Themes(used by all pages)-->
 <!--end::Layout Themes-->
-<link rel="shortcut icon" href="/WEB-INF/resources/assets/media/logos/favicon.ico" />
+<link rel="shortcut icon" href="/resources/assets/media/logos/favicon.ico" />
