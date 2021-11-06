@@ -31,13 +31,13 @@ import lombok.extern.log4j.Log4j2;
 
 
 @Log4j2
-@AllArgsConstructor
+@NoArgsConstructor
 
-@RequestMapping("/member/*")
-@Controller("memberController")
-public class MemberController implements InitializingBean , DisposableBean{
+@RequestMapping("/member")
+@Controller
+public class MemberController {
 
-	@Setter(onMethod_= { @Autowired })
+	@Autowired
     private MemberService service;
 
     /* 회원가입 페이지 이동 --순형
@@ -189,17 +189,6 @@ public class MemberController implements InitializingBean , DisposableBean{
         return null;
     }
 
-	@Override
-	public void destroy() throws Exception {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void afterPropertiesSet() throws Exception {
-		// TODO Auto-generated method stub
-		
-	}
 
 } // end class
 

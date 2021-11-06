@@ -71,11 +71,11 @@
                     <c:forEach items="${list}" var="list">
 
                         <tr>
-                            <th scope="row">${list.category}</th>
-                            <td>${list.title}</td>
+                            <th scope="row">${list.cont_No}</th>
+                            <td>${list.category}</td>
+                            <td><a href="/studyIns/detail?cont_No=${list.cont_No}">${list.title}<a/></td>
                             <td>${list.cont}</td>
                             <td>${list.member_Name}</td>
-                            <td>${list.write_Date}</td>
                             <td>
 
                                 <span class="label label-inline label-light-primary font-weight-bold">
