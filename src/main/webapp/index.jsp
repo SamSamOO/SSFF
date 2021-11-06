@@ -25,11 +25,13 @@ License: You must have a valid license purchased only from themeforest(the above
 <head>
     <title>타이틀 입력해주세용^^</title>
     <!--head.html Include-->
-    <jsp:include page="/WEB-INF/commons/head.jsp"/>
+    <jsp:include page="/WEB-INF/commons/head.jsp"></jsp:include>
 </head>
 
 <!----------------Head 종료----------------------->
 <!----------------Body 시작----------------------->
+
+<a href="/member/studyModalTest">지혜Tddddest용</a>
 <body id="kt_body" class="header-fixed subheader-enabled page-loading">
 <!----------------메인 시작----------------------->
 <div class="d-flex flex-column flex-root">
@@ -38,19 +40,20 @@ License: You must have a valid license purchased only from themeforest(the above
         <!--begin::Wrapper-->
         <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
             <!------------------header.html Include------------------>
-            <jsp:include page="/WEB-INF/commons/header.jsp"/>
+            <jsp:include page="/WEB-INF/commons/header.jsp"></jsp:include>
             <!------------------Header Wrapper : 메뉴 탭 시작------------------>
             <!--menu.html Include-->
-            <jsp:include page="/WEB-INF/commons/menu_main.jsp"/>
+            <jsp:include page="/WEB-INF/commons/menu_main.jsp"></jsp:include>
             <!------------------Header Wrapper : 메뉴 탭 종료------------------>
             <!--컨테이너 시작-->
             <div class="d-flex flex-row flex-column-fluid container">
                 <!--contents.html Include-->
-                <jsp:include page="/WEB-INF/commons/example.jsp"/>
+ 
+                <jsp:include page="/WEB-INF/commons/example.jsp"></jsp:include>
             </div>
             <!--컨테이너 종료-->
             <!--footer.html Include-->
-            <jsp:include page="/WEB-INF/commons/footer.jsp"/>
+            <jsp:include page="/WEB-INF/commons/footer.jsp"></jsp:include>
 </body>
 <!----------------Body 종료----------------------->
 

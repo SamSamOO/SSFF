@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 /*
 
  */
-@RequestMapping("/member")
 @Log4j2
-
 @NoArgsConstructor
+
+@RequestMapping("/member")
 @Controller
 public class MemberController {
 
@@ -39,7 +39,7 @@ public class MemberController {
      * 메인페이지로 이동합니다.
      * */
     @PostMapping("/join")
-    public String memberJoin(MemberVO member) {
+    public String memberJoin(MemberVO member)  {
         log.info("join({}) is invoked", "member = " + member);
 
         return "redirect:/main";
@@ -89,6 +89,16 @@ public class MemberController {
         return "/member/studyList";
     } // studyListGo
 
+    /* 참여신청자/ 멤버목록 모달 민주랑 합치기 전에 여기서 먼저 작업 
+     * 매개변수:
+     * 반환: 스터디목록 뷰
+     * 작성자: 신지혜 
+     * */
+    @GetMapping("/studyModalTest")
+    public void studyModalTest(){
+      log.info("studyModalTest() is invoked");
+    } // studyModalTest
+    
     /* 스터디 카페 예약내역 페이지로 이동합니다
      * 파라메터 : nickname
      * 스터디 카페 예약내역 페이지
