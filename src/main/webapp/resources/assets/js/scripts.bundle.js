@@ -1398,6 +1398,9 @@ if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
 
 "use strict";
 
+/////////////////////////////
+//          메뉴            //
+/////////////////////////////
 // Component Definition
 var KTMenu = function(elementId, options) {
     // Main object
@@ -1825,9 +1828,9 @@ var KTMenu = function(elementId, options) {
             if (KTUtil.hasClass(item.closest('.menu-item'), 'menu-item-open-always')) {
                 return;
             }
-
+                //.menu-item-here :  페이지 소속 메뉴 표시  북마크1
             if (li && submenu) {
-                e.preventDefault();
+                e.preventDefault()
                 var speed = the.options.accordion.slideSpeed;
                 var hasClosables = false;
 
