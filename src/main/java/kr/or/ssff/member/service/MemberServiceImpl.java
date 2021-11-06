@@ -71,12 +71,12 @@ public class MemberServiceImpl implements MemberService, InitializingBean, Dispo
 	   * 작성자	: 신지혜 
 	   */
 	@Override
-	public List<ApplyMemberVO> getApplyMemberList(Integer r_idx) {
-		r_idx= 9001;
+	public List<ApplyMemberVO> getApplyMemberList() {
+
 		log.debug("getApplyMemberList({}) invoked");
-		log.info("\t+ r_idx{}: " + r_idx);
+	
 		
-		List<ApplyMemberVO> allApplyMemberList = this.mapper.getApplyMemberList(r_idx);
+		List<ApplyMemberVO> allApplyMemberList = this.mapper.getApplyMemberList();
 		log.info("\t + allApplyMemberList:{}", allApplyMemberList);		
 		
 		return allApplyMemberList; 

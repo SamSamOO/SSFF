@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="kr.or.ssff.member.MemberMapper">
+<mapper namespace="kr.or.ssff.mapper.MemberMapper">
 
 	<!--  스터디 멤버 조회(모달) : 신지혜 -->
 	<select 
@@ -12,7 +12,7 @@
 	        SELECT
 	            /*+ member_name_asc(apply_member) */ * <!-- 닉네임순 정렬 -->
 	        FROM apply_member 
-	        WHERE r_idx = #{r_idx} 				<!-- //TODO 멤버조회 클릭한 스터디의 번호 -->
+	        WHERE r_idx = 9001 				<!-- //TODO 멤버조회 클릭한 스터디의 번호 -->
             AND study_join_arciwf='i'		<!-- 가입상태는 i (가입중) -->
 
 	</select>
