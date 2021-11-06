@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import kr.or.ssff.mapper.MemberMapper;
 import kr.or.ssff.mapper.StudyInsMapper;
-import kr.or.ssff.member.model.ApplyMemberVO;
+import kr.or.ssff.member.domain.ApplyMemberVO;
 import lombok.AllArgsConstructor;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j2;

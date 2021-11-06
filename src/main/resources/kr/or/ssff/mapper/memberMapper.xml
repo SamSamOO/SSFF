@@ -7,7 +7,7 @@
 	<!--  스터디 멤버 조회(모달) : 신지혜 -->
 	<select 
 		id="getStudyMemberList" 
-		resultType="kr.or.ssff.domain.ApplyMemberVO">
+		resultType="kr.or.ssff.member.domain.ApplyMemberVO">
       
 	        SELECT
 	            /*+ member_name_asc(apply_member) */ * <!-- 닉네임순 정렬 -->

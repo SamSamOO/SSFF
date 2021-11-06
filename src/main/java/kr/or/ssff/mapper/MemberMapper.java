@@ -2,7 +2,7 @@ package kr.or.ssff.mapper;
 
 import java.util.List;
 
-import kr.or.ssff.member.model.ApplyMemberVO;
+import kr.or.ssff.member.domain.ApplyMemberVO;
 
 
 /*

@@ -1,7 +1,8 @@
 package kr.or.ssff.member.service;
 
 import java.util.List;
-import kr.or.ssff.member.model.ApplyMemberVO;
+
+import kr.or.ssff.member.domain.ApplyMemberVO;
 /*
 
  */
