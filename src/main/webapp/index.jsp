@@ -25,7 +25,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <head>
     <title>타이틀 입력해주세용^^</title>
     <!--head.html Include-->
-    <jsp:include page="/WEB-INF/commons/head.jsp"></jsp:include>
+    <jsp:include page="/WEB-INF/commons/head.jsp"/>
 </head>
 
 <!----------------Head 종료----------------------->
@@ -40,19 +40,19 @@ License: You must have a valid license purchased only from themeforest(the above
         <!--begin::Wrapper-->
         <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
             <!------------------header.html Include------------------>
-            <jsp:include page="/WEB-INF/commons/header.jsp"></jsp:include>
+            <jsp:include page="/WEB-INF/commons/header.jsp"/>
             <!------------------Header Wrapper : 메뉴 탭 시작------------------>
             <!--menu.html Include-->
-            <jsp:include page="/WEB-INF/commons/menu_main.jsp"></jsp:include>
+            <jsp:include page="/WEB-INF/commons/menu_main.jsp"/>
             <!------------------Header Wrapper : 메뉴 탭 종료------------------>
             <!--컨테이너 시작-->
             <div class="d-flex flex-row flex-column-fluid container">
                 <!--contents.html Include-->
-                <jsp:include page="/WEB-INF/commons/example.jsp"></jsp:include>
+                <jsp:include page="/WEB-INF/commons/example.jsp"/>
             </div>
             <!--컨테이너 종료-->
             <!--footer.html Include-->
-            <jsp:include page="/WEB-INF/commons/footer.jsp"></jsp:include>
+            <jsp:include page="/WEB-INF/commons/footer.jsp"/>
 </body>
 <!----------------Body 종료----------------------->
 
