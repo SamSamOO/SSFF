@@ -51,6 +51,10 @@
 <link href="../resources/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
 <link href="../resources/assets/plugins/custom/prismjs/prismjs.bundle.css" rel="stylesheet" type="text/css" />
 <link href="../resources/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+
+<!--예솔 작업에 필요한 css-->
+<link href="../../resources/assets/css/yesol.css" rel="stylesheet" type="text/css">
+
 <!--end::Global Theme Styles-->
 <script>
     (function(d) {
@@ -84,4 +88,4 @@
 </script>
 <!--begin::Layout Themes(used by all pages)-->
 <!--end::Layout Themes-->
-<link rel="shortcut icon" href="/WEB-INF/resources/assets/media/logos/favicon.ico" />
+<link rel="shortcut icon" href="/resources/assets/media/logos/favicon.ico" />
