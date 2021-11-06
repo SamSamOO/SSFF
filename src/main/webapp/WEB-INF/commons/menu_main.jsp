@@ -22,7 +22,7 @@
         <!------------------첫번째 탭 종료------------------>
         <!------------------두번째 탭 시작------------------>
         <li class="menu-item menu-item-submenu menu-item-rel" data-menu-toggle="click" aria-haspopup="true">
-          <a href="index2.html" class="menu-link menu-toggle">
+          <a href="#" class="menu-link menu-toggle">
             <span class="menu-text">챌린지</span>
           </a>
 

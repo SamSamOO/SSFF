@@ -45,12 +45,12 @@
 </script>
 <!--end::Fonts-->
 <!--begin::Page Vendors Styles(used by this page)-->
-<link href="../resources/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
+<link href="../../resources/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
 <!--end::Page Vendors Styles-->
 <!--begin::Global Theme Styles(used by all pages)-->
-<link href="../resources/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
-<link href="../resources/assets/plugins/custom/prismjs/prismjs.bundle.css" rel="stylesheet" type="text/css" />
-<link href="../resources/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+<link href="../../resources/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+<link href="../../resources/assets/plugins/custom/prismjs/prismjs.bundle.css" rel="stylesheet" type="text/css" />
+<link href="../../resources/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
 
 <!--예솔 작업에 필요한 css-->
 <link href="../../resources/assets/css/yesol.css" rel="stylesheet" type="text/css">
