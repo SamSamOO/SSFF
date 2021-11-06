@@ -16,7 +16,7 @@
         <!--begin::Page Heading-->
         <div class="d-flex align-items-baseline flex-wrap mr-5">
           <!--Page Title : 페이지 제목 시작-->
-          <h5 class="text-dark font-weight-bold my-1 mr-5">예시입니당$$</h5>
+          <h5 class="text-dark font-weight-bold my-1 mr-5">메인페이지단</h5>
           <!--Page Title : 페이지 제목 종료-->
           <!--Breadcrumb : 로드맵 시작-->
           <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
@@ -44,7 +44,7 @@
       <!--카드 헤더 시작-->
       <div class="card-header border-0 pt-5">
         <h3 class="card-title align-items-start flex-column">
-          <span class="card-label font-weight-bolder text-dark">페이지 제목</span>
+          <span class="card-label font-weight-bolder text-dark">메인페이지 임시 공사중..</span>
         </h3>
         <div class="card-toolbar">
 
@@ -53,7 +53,8 @@
       <!--카드 헤더 종료-->
       <!--카드 Body 시작-->
       <div class="card-body pt-2 pb-0 mt-n3">
-        내용
+        <p><a href="/study/challenge/list">(예솔)여기 누르면 챌린지 리스트로</a> </p>
+        <p><a href="/study/project/list">(예솔)여기 누르면 프로젝트 리스트로</a></p>
       </div>
       <!--카드 Body 종료-->
     </div>

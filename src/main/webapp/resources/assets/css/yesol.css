@@ -51,7 +51,7 @@ h3 {
   padding:30px;
   display: flex;
   justify-content: center;
- 
+
 }
 
 .dropdown{
@@ -105,15 +105,14 @@ h3 {
   padding-top: 15px;
 }
 .studylist-content-ul {
-  /*카드뉴스ul*/
+  /*카드뉴스 틀 UL*/
   list-style: none;
   margin: 0 auto;
   padding: 0;
   text-align: center;
-  display: table;
 }
 .studylist-content {
-  /*내용*/
+  /*카드뉴스 틀 전체 설정*/
   background-color: white;
   box-shadow: 3px 3px 3px 3px rgb(204, 204, 204);
   width: 220px;
@@ -123,22 +122,52 @@ h3 {
   box-sizing: border-box;
   padding: 10px;
   margin: 5px;
+  display: flex;        /*flex 실험중*/
+  flex-direction:column;/*flex 실험중*/
 }
+/****카드뉴스 상부****/
 .studylist-content-title {
   /*카드뉴스 제목*/
   font-size: 15px;
-  margin-top: 25px;
+  padding-top: 25px;
+  margin-bottom: 0px;
+  flex: 1 1 35%;/*flex 실험중*/
 }
+
+/****카드뉴스 중앙부****/
 .studylist-content-logo {
   /*카드뉴스 안에 로고 있는 부분 UL*/
   list-style: none;
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 30px;
   padding: 0;
   text-align: center;
   display: table;
+  flex: 1 1 auto;/*flex 실험중*/
 }
 
+.studylist-content-info{
+  /*카드뉴스 안에 지역이랑 유형 있는 부분(챌린지에서)*/
+  list-style: none;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 0;
+  text-align: center;
+  flex: 1 1 auto;/*flex 실험중*/
+}
+
+.studylist-content-info .span-sido{
+  /*카드뉴스 안에 지역이랑 유형 있는 부분(챌린지에서) 지역*/
+  font-size: 16px;
+  font-weight: 900;
+}
+.studylist-content-info .span-cate{
+  /*카드뉴스 안에 지역이랑 유형 있는 부분(챌린지에서) 지역*/
+  background-color: cornflowerblue;
+  color: white;
+  padding:5px;
+  border-radius: 5px;
+}
 .studylist-content-logo li {
   /*로고 세부*/
   float: left;
@@ -146,16 +175,21 @@ h3 {
   margin-right: 5px;
 }
 
+/****카드뉴스 하부****/
 .studylist-hitAndRepl {
   /*카드뉴스안에 댓글이랑 조회수 UL*/
   list-style: none;
-  margin-top: 50px;
+  margin-top: 40px;
   float: right;
+  flex: 1 1 auto;/*flex 실험중*/
+  padding-left: 110px;
 }
 .studylist-hitAndRepl li {
   /*카드뉴스안에 댓글이랑 조회수*/
   margin-left: 4px;
   margin-right: 4px;
+
   float: left;
 }
+
 /*********************카드뉴스 설정********************************/
