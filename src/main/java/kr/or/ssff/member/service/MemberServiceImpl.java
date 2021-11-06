@@ -69,6 +69,7 @@ public class MemberServiceImpl implements MemberService, InitializingBean, Dispo
 	   */
 	@Override
 	public List<ApplyMemberVO> getApplyMemberList(Integer r_idx) {
+		r_idx= 9001;
 		log.debug("getApplyMemberList({}) invoked");
 		log.info("\t+ r_idx{}: " + r_idx);
 		
