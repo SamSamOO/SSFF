@@ -173,7 +173,7 @@ public class StudyInsController implements InitializingBean , DisposableBean {
     /*
      * 내 특정 스터디 게시판 화면으로 이동
      * 매개변수: Model model
-     * 반환: 내 특정 스터디 게시판 뷰단
+     * 반환: 내 특정 스터디 게시판 뷰단임
      * */
     @GetMapping("/board/list")
     public void studyBoardList(Model model) throws Exception {
