@@ -15,14 +15,14 @@
       <ul class="menu-nav">
         <!------------------첫번째 탭 시작------------------>
         <li class="menu-item menu-item-submenu menu-item-rel menu-item-open menu-item-here" data-menu-toggle="click" aria-haspopup="true">
-          <a href="https://trello.com/b/vb3ivabk/3355" class="menu-link">
+          <a href="/study/project/list" class="menu-link">
             <span class="menu-text">프로젝트</span>
           </a>
         </li>
         <!------------------첫번째 탭 종료------------------>
         <!------------------두번째 탭 시작------------------>
         <li class="menu-item menu-item-submenu menu-item-rel" data-menu-toggle="click" aria-haspopup="true">
-          <a href="https://trello.com/b/vb3ivabk/3355" class="menu-link">
+          <a href="/study/challenge/list" class="menu-link">
             <span class="menu-text">챌린지</span>
           </a>
 
