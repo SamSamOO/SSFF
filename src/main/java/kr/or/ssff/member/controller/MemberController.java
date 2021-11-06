@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 /*
 
  */
+@RequestMapping("/member")
 @Log4j2
-@NoArgsConstructor
 
-@RequestMapping("/member/*")
+@NoArgsConstructor
 @Controller
 public class MemberController {
 
@@ -39,7 +39,7 @@ public class MemberController {
      * 메인페이지로 이동합니다.
      * */
     @PostMapping("/join")
-    public String memberJoin(MemberVO member)  {
+    public String memberJoin(MemberVO member) {
         log.info("join({}) is invoked", "member = " + member);
 
         return "redirect:/main";
