@@ -1,12 +1,16 @@
 package kr.or.ssff.studyIns.controller;
 
 import java.util.List;
+import java.util.Objects;
 import kr.or.ssff.studyIns.domain.StudyInsVO;
 import kr.or.ssff.studyIns.model.StudyInsDTO;
 import kr.or.ssff.studyIns.service.StudyInsService;
+import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,15 +19,25 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Log4j2
-@NoArgsConstructor
+@AllArgsConstructor
 
-@RequestMapping("/studyIns")
-@Controller
+@RequestMapping("/studyIns/*")
+@Controller("studyInsController")
 
-public class StudyInsController {
+public class StudyInsController implements InitializingBean , DisposableBean {
 
-    @Setter(onMethod_ = @Autowired)
-    StudyInsService service;
+    @Override
+    public void destroy() throws Exception {
+
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+
+    }
+
+    @Setter(onMethod_ = {@Autowired})
+    private StudyInsService service;
 
     //-------------------------------- 민주 파일함 --------------------------------//
 
@@ -158,19 +172,17 @@ public class StudyInsController {
 
     /*
      * 내 특정 스터디 게시판 화면으로 이동
-     * 매개변수: StudyInsVO studyIns
+     * 매개변수: Model model
      * 반환: 내 특정 스터디 게시판 뷰단
      * */
     @GetMapping("/board/list")
-    public String studyBoardList(StudyInsVO studyInsVO, Model model) throws Exception {
+    public void studyBoardList(Model model) throws Exception {
+        log.info("studyBoardList({}) is invoked", "model = " + model);
 
-        log.info("studyBoardList({}{}) is invoked", "studyInsVO = " + studyInsVO, ", model = " + model);
+        Objects.requireNonNull(service);
 
-        List<StudyInsVO> list = service.getList(studyInsVO);
+        model.addAttribute("list", service.getList());
 
-        model.addAttribute("list", list);
-
-        return "studyIns/board/list";
     } // studyBoardList
 
     //-------------------------------- 상준 게시물 CRUD--------------------------------//
