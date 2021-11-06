@@ -1,12 +1,9 @@
 package kr.or.ssff.studyIns.controller;
 
-import java.util.List;
 import java.util.Objects;
-import kr.or.ssff.studyIns.domain.StudyInsVO;
 import kr.or.ssff.studyIns.model.StudyInsDTO;
 import kr.or.ssff.studyIns.service.StudyInsService;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.DisposableBean;
@@ -24,7 +21,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/studyIns/*")
 @Controller("studyInsController")
 
-public class StudyInsController implements InitializingBean , DisposableBean {
+public class StudyInsController implements InitializingBean, DisposableBean {
+
+    @Setter(onMethod_ = {@Autowired})
+    private StudyInsService service;
 
     @Override
     public void destroy() throws Exception {
@@ -35,9 +35,6 @@ public class StudyInsController implements InitializingBean , DisposableBean {
     public void afterPropertiesSet() throws Exception {
 
     }
-
-    @Setter(onMethod_ = {@Autowired})
-    private StudyInsService service;
 
     //-------------------------------- 민주 파일함 --------------------------------//
 
