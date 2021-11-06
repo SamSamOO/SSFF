@@ -1,46 +1,22 @@
 package kr.or.ssff.studyIns.service;
 
 import java.util.List;
+import javax.inject.Inject;
 import kr.or.ssff.study.service.StudyService;
+import kr.or.ssff.studyIns.domain.StudyInsVO;
+import lombok.Setter;
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 /*
 
  */
-public class StudyInsServiceImpl implements StudyService {
+public class StudyInsServiceImpl implements StudyInsService {
 
     @Override
-    public boolean register() {
-        return false;
-    }
-
-    @Override
-    public boolean modify() {
-        return false;
-    }
-
-    @Override
-    public boolean remove() {
-        return false;
-    }
-
-    @Override
-    public String get() {
-        return null;
-    }
-
-    @Override
-    public List<String> getList() {
-        return null;
-    }
-
-    @Override
-    public List<String> getListPerPage() {
-        return null;
-    }
-
-    @Override
-    public Integer getTotal() {
-        return null;
+    public List<StudyInsVO> getList(StudyInsVO vo) throws Exception {
+        return ;
     }
 }
 

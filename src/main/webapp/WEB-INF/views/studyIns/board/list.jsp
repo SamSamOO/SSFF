@@ -1,24 +1,8 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: bitcamp
-  Date: 2021-11-05
-  Time: 오후 3:23
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<!--
-Template Name: Metronic - Bootstrap 4 HTML, React, Angular 10 & VueJS Admin Dashboard Theme
-Author: KeenThemes
-Website: http://www.keenthemes.com/
-Contact: support@keenthemes.com
-Follow: www.twitter.com/keenthemes
-Dribbble: www.dribbble.com/keenthemes
-Like: www.facebook.com/keenthemes
-Purchase: https://1.envato.market/EA4JP
-Renew Support: https://1.envato.market/EA4JP
-License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
--->
+
 <html lang="en">
 <!----------------Head 시작----------------------->
 
@@ -60,7 +44,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 <span class="label label-inline label-light-primary font-weight-bold">
                     카테고리
                 </span>
-                    </td>
+                        </td>
                         <td>
                 <span class="label label-inline label-light-primary font-weight-bold">
                     제목
@@ -70,11 +54,12 @@ License: You must have a valid license purchased only from themeforest(the above
                 <span class="label label-inline label-light-primary font-weight-bold">
                     내용
                 </span>
-                        </td>                        <td>
+                        </td>
+                        <td>
                 <span class="label label-inline label-light-primary font-weight-bold">
                     닉네임
                 </span>
-                    </td>
+                        </td>
                         <td>
                 <span class="label label-inline label-light-primary font-weight-bold">
                     작성일자
@@ -83,18 +68,24 @@ License: You must have a valid license purchased only from themeforest(the above
                     </tr>
                     </thead>
                     <tbody>
+                    <c:forEach items="${list}" var="list">
+
+                        <tr>
+                            <th scope="row">${list.category}</th>
+                            <td>${list.title}</td>
+                            <td>${list.cont}</td>
+                            <td>${list.member_Name}</td>
+                            <td>${list.write_Date}</td>
+                            <td>
+
+                                <span class="label label-inline label-light-primary font-weight-bold">
+                                        ${list.write_Date}
+                                </span>
+                            </td>
+
+                        </tr>
+                    </c:forEach>
                     <tr>
-                        <th scope="row">${contNo}</th>
-                        <td>${title}</td>
-                        <td>${cont}</td>
-                        <td>${nickName}</td>
-                        <td>${writeDate}</td>
-                        <td>
-                <span class="label label-inline label-light-primary font-weight-bold">
-                    ${writeDate}
-                </span>
-                        </td>
-                    </tr><tr>
                         <th scope="row">2</th>
                         <td>카테고리</td>
                         <td>제목</td>
@@ -104,7 +95,8 @@ License: You must have a valid license purchased only from themeforest(the above
                         <td>
 
                         </td>
-                    </tr><tr>
+                    </tr>
+                    <tr>
                         <th scope="row">${contNo}</th>
                         <td>${title}</td>
                         <td>${cont}</td>

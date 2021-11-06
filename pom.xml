@@ -228,6 +228,8 @@
       <version>2.0.6</version>
     </dependency>
 
+
+
     <!-- HikariCP -->
     <dependency>
       <groupId>com.zaxxer</groupId>
@@ -247,6 +249,14 @@
       <groupId>commons-fileupload</groupId>
       <artifactId>commons-fileupload</artifactId>
       <version>1.4</version>
+    </dependency>
+
+    <!--inject-->
+    <dependency>
+      <groupId>javax.inject</groupId>
+      <artifactId>javax.inject</artifactId>
+      <version>1</version>
+      <scope>compile</scope>
     </dependency>
 
   </dependencies>
