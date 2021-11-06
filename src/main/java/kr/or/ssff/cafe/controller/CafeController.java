@@ -77,7 +77,7 @@ public class CafeController{
    * 매개변수:
    * 반환: 스터디 카페 등록 화면 뷰단
    * */
-  @PostMapping("/registerView")
+  @GetMapping("/registerView")
   public String insertCafeView(){
     log.info("insertCafeView() is invoked");
 
@@ -101,7 +101,7 @@ public class CafeController{
    * 매개변수: 카페VO (수정할 카페 정보를 뿌려줄 객체)
    * 반환: 스터디 카페 수정 화면 뷰단
    * */
-  @PostMapping("/modifyView")
+  @GetMapping("/modifyView")
   public String updateCafeView(CafeVO cafeVO){
     log.info("updateCafeView({}) is invoked","cafeVO = " + cafeVO);
 
@@ -131,6 +131,11 @@ public class CafeController{
 
     return "redirect:cafe/list";
   } // deleteCafe
+  
+  
+  
+
+  
 }
 
 

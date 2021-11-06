@@ -31,7 +31,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!----------------Head 종료----------------------->
 <!----------------Body 시작----------------------->
 
-
+<a href="/member/studyModalTest">지혜Tddddest용</a>
 <body id="kt_body" class="header-fixed subheader-enabled page-loading">
 <!----------------메인 시작----------------------->
 <div class="d-flex flex-column flex-root">
@@ -48,6 +48,7 @@ License: You must have a valid license purchased only from themeforest(the above
             <!--컨테이너 시작-->
             <div class="d-flex flex-row flex-column-fluid container">
                 <!--contents.html Include-->
+ 
                 <jsp:include page="/WEB-INF/commons/example.jsp"></jsp:include>
             </div>
             <!--컨테이너 종료-->
