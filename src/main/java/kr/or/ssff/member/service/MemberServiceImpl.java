@@ -5,11 +5,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.or.ssff.mapper.MemberMapper;
-import kr.or.ssff.member.model.ApplyMemberVO;
+import kr.or.ssff.mapper.StudyInsMapper;
+import kr.or.ssff.member.domain.ApplyMemberVO;
 import lombok.AllArgsConstructor;
+import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
 
 /*
@@ -24,7 +27,7 @@ import lombok.extern.log4j.Log4j2;
 @Service("memberService")
 public class MemberServiceImpl implements MemberService, InitializingBean, DisposableBean  {
 	
-
+	@Setter(onMethod_ = @Autowired)
 	private MemberMapper mapper;
 
     @Override
@@ -68,11 +71,12 @@ public class MemberServiceImpl implements MemberService, InitializingBean, Dispo
 	   * 작성자	: 신지혜 
 	   */
 	@Override
-	public List<ApplyMemberVO> getApplyMemberList(Integer r_idx) {
+	public List<ApplyMemberVO> getApplyMemberList() {
+
 		log.debug("getApplyMemberList({}) invoked");
-		log.info("\t+ r_idx{}: " + r_idx);
+	
 		
-		List<ApplyMemberVO> allApplyMemberList = this.mapper.getApplyMemberList(r_idx);
+		List<ApplyMemberVO> allApplyMemberList = this.mapper.getApplyMemberList();
 		log.info("\t + allApplyMemberList:{}", allApplyMemberList);		
 		
 		return allApplyMemberList; 

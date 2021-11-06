@@ -6,6 +6,10 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
+
+<%@taglib	uri="http://java.sun.com/jsp/jstl/core"	prefix="c" %>
+<%@taglib	uri="http://java.sun.com/jsp/jstl/fmt"	prefix="fmt" %>
+
 <!DOCTYPE html>
 <!--
 Template Name: Metronic - Bootstrap 4 HTML, React, Angular 10 & VueJS Admin Dashboard Theme
@@ -19,11 +23,14 @@ Purchase: https://1.envato.market/EA4JP
 Renew Support: https://1.envato.market/EA4JP
 License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
 -->
-<html lang="en">
+<html>
 <!----------------Head 시작----------------------->
 
 <head>
+	<meta charset="UTF-8">
 <title>studyModalTest</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
 <!--head.html Include-->
 <jsp:include page="/WEB-INF/commons/head.jsp"></jsp:include>
 </head>
@@ -34,6 +41,11 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
 <body id="kt_body" class="header-fixed subheader-enabled page-loading">
+	<hr>
+		<!-- Model객체 전달여부 확인 좀 할게요 -->
+		1. applyMemberList: ${applyMemberList} 
+		2. applyMemberList: ${applyMemberList.getClass().getName()}		
+	<hr>
 	<!----------------메인 시작----------------------->
 	<div class="d-flex flex-column flex-root">
 		<!----------------페이지 시작----------------------->
@@ -120,7 +132,8 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 									</div>
 									<!--end::Search Form-->
-									
+													
+
 									<!--begin: Datatable-->
 									<div class="datatable datatable-bordered datatable-head-custom datatable-default datatable-primary datatable-scroll datatable-loaded"
 										id="studyMemberList">
@@ -144,6 +157,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</thead>
 											
 											<tbody class="datatable-body ps">
+											<c:forEach items="${applyMemberList}" var="applyMemberList">
 											<tr data-row="0" class="datatable-row" style="left: 0px;">
 												<td class="datatable-cell" data-field="" style="width: 5%;"><span>&nbsp;</span>
 												</td>
@@ -153,16 +167,16 @@ License: You must have a valid license purchased only from themeforest(the above
 												</td>
 												
 												<td class="datatable-cell" data-field="studyTeamName"
-														aria-label="=팀이름el" style="width: 45%;"><span>스터디팀명1</span>
+														aria-label="=팀이름el" style="width: 45%;"><span>${applyMemberList.r_idx}</span>
 												</td>
 												
 												<td data-field="NickName" aria-label="=회원닉el" class="datatable-cell" style="width: 40%;">
 													<span>
 														<img class="symbol symbol-40 symbol-sm flex-shrink-0" src="https://lh3.googleusercontent.com/ogw/ADea4I7X5V09iCZFEJgv24Lx02Z__PQ9LalGRvCTEHE6=s32-c-mo" alt="photo">
-													회원닉네임-2</span>
-												</td>
-												
+													{applyMemberList.member_name}</span>
+												</td>												
 											</tr>
+											</c:forEach>
 											<div class="ps__rail-x" style="left: 0px; bottom: 0px;">
 												<div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
 											</div>
@@ -187,7 +201,10 @@ License: You must have a valid license purchased only from themeforest(the above
 				<!--컨테이너 종료-->
 				<!--footer.html Include-->
 				<jsp:include page="/WEB-INF/commons/footer.jsp"></jsp:include>
+	
+				
 </body>
+
 <!----------------Body 종료----------------------->
 
 </html>

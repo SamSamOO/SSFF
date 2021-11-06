@@ -1,18 +1,35 @@
 package kr.or.ssff.member.controller;
 
-import kr.or.ssff.member.domain.MemberVO;
-import kr.or.ssff.member.service.MemberService;
-import lombok.NoArgsConstructor;
-import lombok.extern.log4j.Log4j2;
+import java.util.List;
+
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import kr.or.ssff.member.domain.ApplyMemberVO;
+import kr.or.ssff.member.domain.MemberVO;
+import kr.or.ssff.member.service.MemberService;
+import kr.or.ssff.studyIns.controller.StudyInsController;
+import kr.or.ssff.studyIns.service.StudyInsService;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.extern.log4j.Log4j2;
+
 /*
 
  */
+
+
+
+
+
+
 @Log4j2
 @NoArgsConstructor
 
@@ -20,8 +37,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class MemberController {
 
-    @Autowired
-    private MemberService memberService;
+	@Autowired
+    private MemberService service;
 
     /* 회원가입 페이지 이동 --순형
      * 파라메터  : 없음
@@ -95,8 +112,13 @@ public class MemberController {
      * 작성자: 신지혜 
      * */
     @GetMapping("/studyModalTest")
-    public void studyModalTest(){
+    public void studyModalTest(Model model){
+
       log.info("studyModalTest() is invoked");
+      
+		List<ApplyMemberVO> applyMemberList = this.service.getApplyMemberList(); 
+		log.info("\t+ list size: {}", applyMemberList.size()); 
+		model.addAttribute("applyMemberList", applyMemberList); 
     } // studyModalTest
     
     /* 스터디 카페 예약내역 페이지로 이동합니다
@@ -166,6 +188,7 @@ public class MemberController {
 
         return null;
     }
+
 
 } // end class
 

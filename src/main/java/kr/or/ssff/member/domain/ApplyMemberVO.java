@@ -1,4 +1,4 @@
-package kr.or.ssff.member.model;
+package kr.or.ssff.member.domain;
 
 import java.sql.Date;
 

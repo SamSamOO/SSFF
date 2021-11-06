@@ -31,6 +31,7 @@ public class StudyInsServiceImpl implements StudyInsService, InitializingBean, D
      * 반환	: 게시글 리스트
      * 작성자	: 박상준
      */
+    
     public List<StudyInsVO> getList() throws Exception {
         log.info("getList() is invoked");
 
