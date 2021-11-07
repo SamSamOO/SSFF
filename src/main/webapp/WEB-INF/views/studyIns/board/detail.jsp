@@ -9,6 +9,8 @@
     <title>게시물 상세 페이지입니다</title>
     <!--head.html Include-->
     <jsp:include page="/WEB-INF/commons/head.jsp"></jsp:include>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
 
     <script>
         $(function () {
@@ -24,7 +26,12 @@
             $(`#removeBtn`).on('click', function () {
                 console.log("삭제 버튼 클릭");
 
-                self.location = '/studyIns/board/detail/remove?cont_No=<c:out value="${detail.cont_No}"/> ';
+                <%--self.location = '/studyIns/board/detail/remove?cont_No=<c:out value="${detail.cont_No}"/> ';--%>
+                let formObj = $('form');
+
+                formObj.attr('method', 'POST');
+                formObj.attr('action', '/studyIns/board/detail/remove');
+                formObj.submit();
             }); // onclick
         }); // jq
     </script>
@@ -49,7 +56,8 @@
             <!--컨테이너 시작-->
 
             <div class="d-flex flex-row flex-column-fluid container">
-                <form action="#">
+                <form action="/studyIns/board/detail/modify" method="POST">
+                    <input type="hidden" name="cont_No" value="<c:out value='${detail.cont_No}' />">
                     <table style="width: 70%; border: 2px!important;">
                         <tr>
                             <th align="left" height="50px"><a href="javascript:history.back()">뒤로가기 들어갈곳</a></th>
@@ -63,8 +71,8 @@
                             <%--세션아이디와 현재글 닉네임과 동일한 경우 수정 삭제버튼 보입니다. --%>
 
                             <td colspan="3">
-                                <input type="button" id="modifyBtn" value="수정"/>
-                                <input type="button" id="removeBtn" value="삭제"/>
+                                <button type="button" id="modifyBtn">수정</button>
+                                <button type="button" id="removeBtn">삭제</button>
                             </td>
 
                             <%----%>

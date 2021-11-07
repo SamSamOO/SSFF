@@ -193,7 +193,7 @@ public class StudyInsController implements InitializingBean, DisposableBean {
      * 반환: X  ( 해당 매핑으로 이동함)
      * */
     @GetMapping("/board/detail")
-    public String studyBoardDetail(@RequestParam("cont_No")Integer cont_No, Model model)  throws Exception{
+    public String studyBoardDetail(@RequestParam("cont_No") Integer cont_No, Model model) throws Exception {
         log.debug("studyBoardDetail({}) is invoked", "cont_no = " + cont_No + ", model = " + model);
 
         Objects.requireNonNull(service);
@@ -214,14 +214,16 @@ public class StudyInsController implements InitializingBean, DisposableBean {
      * */
     @PostMapping("/board/detail/remove")
     public String studyBoardDetailRemove(@RequestParam("cont_No") Integer cont_No, RedirectAttributes rttrs) {
-        log.info("studyBoardDetailRemove({} , {}) is invoked", "cont_No = " + cont_No , ", rttrs = " + rttrs);
+
+        log.info("studyBoardDetailRemove({} , {}) is invoked", "cont_No = " + cont_No, ", rttrs = " + rttrs);
 
         Objects.requireNonNull(service);
+
         if (service.remove(cont_No)) {
             rttrs.addFlashAttribute("result", "success");
         } // if
 
-        return "redirect:studyIns/board/list";
+        return "redirect:/studyIns/board/list";
     } // studyBoardDetailRemove
 
     /*
