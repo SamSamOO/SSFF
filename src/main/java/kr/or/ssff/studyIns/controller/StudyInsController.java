@@ -45,7 +45,7 @@ public class StudyInsController implements InitializingBean, DisposableBean {
      * */
     @GetMapping("/board/fileBox/link")
     public String boardFileBoxLink(String boardId) {
-        log.info("boardFileBoxLink({}) is invoked", "boardId = " + boardId);
+        log.debug("boardFileBoxLink({}) is invoked", "boardId = " + boardId);
 
         return "studyIns/board/fileBoxLink";
     } // boardLink
@@ -58,7 +58,7 @@ public class StudyInsController implements InitializingBean, DisposableBean {
      * */
     @GetMapping("/board/fileBox/file")
     public String boardFileBoxEctFile(String boardId) {
-        log.info("boardFileBoxEctFile({}) is invoked", "boardId = " + boardId);
+        log.debug("boardFileBoxEctFile({}) is invoked", "boardId = " + boardId);
 
         return "studyIns/board/fileBoxEctFile";
     } // boardEctFile
@@ -71,7 +71,7 @@ public class StudyInsController implements InitializingBean, DisposableBean {
      * */
     @GetMapping("/board/fileBox/photo")
     public String boardFileBoxPhoto(String boardId) {
-        log.info("boardFileBoxPhoto({}) is invoked", "boardId = " + boardId);
+        log.debug("boardFileBoxPhoto({}) is invoked", "boardId = " + boardId);
 
         return "studyIns/board/fileBoxPhoto";
     } // boardPhoto
@@ -84,7 +84,7 @@ public class StudyInsController implements InitializingBean, DisposableBean {
      * */
     @GetMapping("/board/fileBox")
     public String boardFileBox(String boardId) {
-        log.info("boardFileBox({}) is invoked", "boardId = " + boardId);
+        log.debug("boardFileBox({}) is invoked", "boardId = " + boardId);
 
         return "studyIns/board/fileBox";
     } // boardFileBox
@@ -96,7 +96,7 @@ public class StudyInsController implements InitializingBean, DisposableBean {
      * */
     @GetMapping("/chatRoom/fileBox/link")
     public String chatRoomFileBoxLink(String chatRoomId) {
-        log.info("chatRoomFileBoxLink({}) is invoked", "chatRoomId = " + chatRoomId);
+        log.debug("chatRoomFileBoxLink({}) is invoked", "chatRoomId = " + chatRoomId);
 
         return "studyIns/chatRoom/fileBoxLink";
     } // chatRoomFileBoxLink
@@ -109,7 +109,7 @@ public class StudyInsController implements InitializingBean, DisposableBean {
      * */
     @GetMapping("/chatRoom/fileBox/file")
     public String chatRoomFileBoxEctFile(String chatRoomId) {
-        log.info("chatRoomFileBoxEctFile({}) is invoked", "chatRoomId = " + chatRoomId);
+        log.debug("chatRoomFileBoxEctFile({}) is invoked", "chatRoomId = " + chatRoomId);
 
         return "studyIns/chatRoom/fileBoxEctFile";
     } // chatRoomFileBoxEctFile
@@ -122,7 +122,7 @@ public class StudyInsController implements InitializingBean, DisposableBean {
      * */
     @GetMapping("/chatRoom/fileBox/photo")
     public String chatRoomFileBoxPhoto(String chatRoomId) {
-        log.info("chatRoomFileBoxPhoto({}) is invoked", "chatRoomId = " + chatRoomId);
+        log.debug("chatRoomFileBoxPhoto({}) is invoked", "chatRoomId = " + chatRoomId);
 
         return "studyIns/chatRoom/fileBoxPhoto";
     } // chatRoomFileBoxPhoto
@@ -135,7 +135,7 @@ public class StudyInsController implements InitializingBean, DisposableBean {
      * */
     @GetMapping("/chatRoom/fileBox")
     public String chatRoomFileBox(String chatRoomId) {
-        log.info("chatRoomFileBox({}) is invoked", "chatRoomId = " + chatRoomId);
+        log.debug("chatRoomFileBox({}) is invoked", "chatRoomId = " + chatRoomId);
 
         return "studyIns/chatRoom/fileBox";
     } // chatRoomFileBox
@@ -149,7 +149,7 @@ public class StudyInsController implements InitializingBean, DisposableBean {
      * */
     @GetMapping("/main/challenge")
     public String challengeMain(String studyId, String nickName) {
-        log.info("challengeMain({}) is invoked", "studyId = " + studyId + ", nickName = " + nickName);
+        log.debug("challengeMain({}) is invoked", "studyId = " + studyId + ", nickName = " + nickName);
 
         return "studyIns/main/challenge";
     } // challengeMain
@@ -161,7 +161,7 @@ public class StudyInsController implements InitializingBean, DisposableBean {
      * */
     @GetMapping("/main/project")
     public String projectMain(String studyId, String nickName) {
-        log.info("projectMain({}) is invoked", "studyId = " + studyId + ", nickName = " + nickName);
+        log.debug("projectMain({}) is invoked", "studyId = " + studyId + ", nickName = " + nickName);
 
         return "studyIns/main/project";
     } // projectMain
@@ -174,7 +174,7 @@ public class StudyInsController implements InitializingBean, DisposableBean {
      * */
     @GetMapping("/board/list")
     public void studyBoardList(Model model) throws Exception {
-        log.info("studyBoardList({}) is invoked", "model = " + model);
+        log.debug("studyBoardList({}) is invoked", "model = " + model);
 
         Objects.requireNonNull(service);
 
@@ -191,7 +191,7 @@ public class StudyInsController implements InitializingBean, DisposableBean {
      * */
     @GetMapping("/board/detail")
     public String studyBoardDetail(String boardNo) {
-        log.info("studyBoardDetail({}) is invoked", "boardNo = " + boardNo);
+        log.debug("studyBoardDetail({}) is invoked", "boardNo = " + boardNo);
 
         return "studyIns/board/detail";
     } // studyBoardDetail
@@ -203,7 +203,7 @@ public class StudyInsController implements InitializingBean, DisposableBean {
      * */
     @PostMapping("/board/detail/remove")
     public String studyBoardDetailRemove(String boardNo) {
-        log.info("studyBoardDetailRemove({}) is invoked", "boardNo = " + boardNo);
+        log.debug("studyBoardDetailRemove({}) is invoked", "boardNo = " + boardNo);
 
         return "redirect:studyIns/board/list";
     } // studyBoardDetailRemove
@@ -215,7 +215,7 @@ public class StudyInsController implements InitializingBean, DisposableBean {
      * */
     @PostMapping("/board/detail/modifyGo")
     public String studyBoardDetailModifyGo(String boardNo) {
-        log.info("studyBoardDetailModifyGo({}) is invoked", "boardNo = " + boardNo);
+        log.debug("studyBoardDetailModifyGo({}) is invoked", "boardNo = " + boardNo);
 
         return "studyIns/board/modifyGo";
     } // studyBoardDetailModifyGo
@@ -227,7 +227,7 @@ public class StudyInsController implements InitializingBean, DisposableBean {
      * */
     @PostMapping("/board/detail/modify")
     public String studyBoardDetailModify(StudyInsDTO studyInsDTO) {
-        log.info("studyBoardDetailModify({}) is invoked", "studyInsDTO = " + studyInsDTO);
+        log.debug("studyBoardDetailModify({}) is invoked", "studyInsDTO = " + studyInsDTO);
 
         return "redirect:studyIns/board/detail";
     } // studyBoardDetailModify
@@ -239,7 +239,7 @@ public class StudyInsController implements InitializingBean, DisposableBean {
      * */
     @PostMapping("/board/postGo")
     public String studyBoardPostGo() {
-        log.info("studyBoardPostGo() is invoked");
+        log.debug("studyBoardPostGo() is invoked");
 
         return "studyIns/board/postGo";
     } // studyBoardPostGo
@@ -251,7 +251,7 @@ public class StudyInsController implements InitializingBean, DisposableBean {
      * */
     @PostMapping("/board/post")
     public String studyBoardPost(StudyInsDTO studyInsDTO) {
-        log.info("studyBoardPost({}) is invoked", "studyInsDTO = " + studyInsDTO);
+        log.debug("studyBoardPost({}) is invoked", "studyInsDTO = " + studyInsDTO);
 
         return "redirect:studyIns/board/detail";
     } // studyBoardPost
@@ -265,7 +265,7 @@ public class StudyInsController implements InitializingBean, DisposableBean {
      * */
     @GetMapping("/chatRoom")
     public String chatRoom(String chatRoomId) { // TODO 매개변수 확인
-        log.info("chatRoom({}) is invoked", "chatRoomId = " + chatRoomId);
+        log.debug("chatRoom({}) is invoked", "chatRoomId = " + chatRoomId);
 
         return "studyIns/chatRoom/chatRoom";
     } // chatRoom
