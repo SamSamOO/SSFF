@@ -28,7 +28,7 @@
 
         delete
         from si_board
-        where cont_No = #{cont_No};
+        where cont_No = #{cont_No}
 
     </delete>
 </mapper>
