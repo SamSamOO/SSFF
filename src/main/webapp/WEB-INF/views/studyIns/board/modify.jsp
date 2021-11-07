@@ -34,11 +34,14 @@
 
             <div class="d-flex flex-row flex-column-fluid container">
 
-
+                하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이하이
             </div>
             <%--컨테이너 종료--%>
             <!--footer.html Include-->
             <jsp:include page="/WEB-INF/commons/footer.jsp"></jsp:include>
-        </div></body>
+        </div>
+    </div>
+</div>
+</body>
 <!----------------Body 종료----------------------->
 </html>

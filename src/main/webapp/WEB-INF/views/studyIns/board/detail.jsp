@@ -102,6 +102,8 @@
             <!--footer.html Include-->
             <jsp:include page="/WEB-INF/commons/footer.jsp"></jsp:include>
         </div>
+    </div>
+</div>
 </body>
 <!----------------Body 종료----------------------->
 </html>
