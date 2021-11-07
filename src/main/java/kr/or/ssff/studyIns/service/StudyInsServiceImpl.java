@@ -24,14 +24,13 @@ public class StudyInsServiceImpl implements StudyInsService, InitializingBean, D
     @Setter(onMethod_ = @Autowired)
     private StudyInsMapper mapper;
 
-    @Override
 
     /* 게시글의 목록을 조회하는 함수입니다. (SI_BOARD table)
      * 매개변수: 없음
      * 반환	: 게시글 리스트
      * 작성자	: 박상준
      */
-    
+    @Override
     public List<StudyInsVO> getList() throws Exception {
         log.info("getList() is invoked");
 
@@ -43,6 +42,34 @@ public class StudyInsServiceImpl implements StudyInsService, InitializingBean, D
         return list;
     }
 
+    /* 게시물을 조회하는 함수입니다. (SI_BOARD table)
+     * 매개변수: 게시물 번호
+     * 반환	:  해당 게시물 번호의 게시물 detail
+     * 작성자	: 박상준
+     */
+
+    @Override
+    public StudyInsVO get(Integer cont_No) throws Exception {
+        log.info("get({}) is invoked", "cont_no = " + cont_No);
+
+        Objects.requireNonNull(mapper);
+        return mapper.read(cont_No);
+    }
+
+    /* 게시물을 삭제하는 함수입니다. (SI_BOARD table)
+     * 매개변수: 게시물 번호
+     * 반환	:  해당 게시판
+     * 작성자	: 박상준
+     */
+
+    @Override
+    public boolean remove(Integer cont_No) {
+        log.info("remove({}) is invoked", "cont_No = " + cont_No);
+
+        Objects.requireNonNull(mapper);
+
+        return mapper.remove(cont_No);
+    }
 
     @Override
     public void destroy() throws Exception {

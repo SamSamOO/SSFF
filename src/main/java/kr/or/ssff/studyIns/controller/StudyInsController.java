@@ -1,6 +1,7 @@
 package kr.or.ssff.studyIns.controller;
 
 import java.util.Objects;
+import kr.or.ssff.studyIns.domain.StudyInsVO;
 import kr.or.ssff.studyIns.model.StudyInsDTO;
 import kr.or.ssff.studyIns.service.StudyInsService;
 import lombok.AllArgsConstructor;
@@ -14,6 +15,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Log4j2
 @AllArgsConstructor
@@ -185,13 +188,21 @@ public class StudyInsController implements InitializingBean, DisposableBean {
     //-------------------------------- 상준 게시물 CRUD--------------------------------//
 
     /*
-     * 스터디 게시물 상세 화면으로 이동
+     * 스터디 게시물 상세 화면으로 이동 -- 상준
      * 매개변수: 게시물번호
-     * 반환: 스터디 게시물 상세 뷰단
+     * 반환: X  ( 해당 매핑으로 이동함)
      * */
     @GetMapping("/board/detail")
-    public String studyBoardDetail(String boardNo) {
-        log.debug("studyBoardDetail({}) is invoked", "boardNo = " + boardNo);
+    public String studyBoardDetail(@RequestParam("cont_No") Integer cont_No, Model model) throws Exception {
+        log.debug("studyBoardDetail({}) is invoked", "cont_no = " + cont_No + ", model = " + model);
+
+        Objects.requireNonNull(service);
+        StudyInsVO detail = service.get(cont_No);
+
+        log.debug("안녕하세요");
+        log.debug("detail = {}", detail);
+
+        model.addAttribute("detail", detail);
 
         return "studyIns/board/detail";
     } // studyBoardDetail
@@ -199,13 +210,20 @@ public class StudyInsController implements InitializingBean, DisposableBean {
     /*
      * 스터디 게시물 삭제
      * 매개변수: 게시물번호
-     * 반환: 스터디 게시판 메인
+     * 반환: 스터디 게시글 리스트화면.
      * */
     @PostMapping("/board/detail/remove")
-    public String studyBoardDetailRemove(String boardNo) {
-        log.debug("studyBoardDetailRemove({}) is invoked", "boardNo = " + boardNo);
+    public String studyBoardDetailRemove(@RequestParam("cont_No") Integer cont_No, RedirectAttributes rttrs) {
 
-        return "redirect:studyIns/board/list";
+        log.info("studyBoardDetailRemove({} , {}) is invoked", "cont_No = " + cont_No, ", rttrs = " + rttrs);
+
+        Objects.requireNonNull(service);
+
+        if (service.remove(cont_No)) {
+            rttrs.addFlashAttribute("result", "success");
+        } // if
+
+        return "redirect:/studyIns/board/list";
     } // studyBoardDetailRemove
 
     /*
@@ -213,11 +231,16 @@ public class StudyInsController implements InitializingBean, DisposableBean {
      * 매개변수: 게시물번호
      * 반환: 스터디 게시물 수정페이지 뷰단
      * */
-    @PostMapping("/board/detail/modifyGo")
-    public String studyBoardDetailModifyGo(String boardNo) {
-        log.debug("studyBoardDetailModifyGo({}) is invoked", "boardNo = " + boardNo);
+    @GetMapping("/board/detail/modifyGo")
+    public String studyBoardDetailModifyGo(@RequestParam Integer cont_No,Model model) throws Exception {
+        log.debug("studyBoardDetailModifyGo({}) is invoked", "cont_No = " + cont_No);
 
-        return "studyIns/board/modifyGo";
+        Objects.requireNonNull(service);
+        StudyInsVO modifyDetail = service.get(cont_No);
+        log.debug("modifyDetail = {}", modifyDetail);
+
+        model.addAttribute("board", modifyDetail);
+        return "/studyIns/board/modify";
     } // studyBoardDetailModifyGo
 
     /*
