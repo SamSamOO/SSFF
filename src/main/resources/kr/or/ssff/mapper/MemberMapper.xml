@@ -4,20 +4,42 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.or.ssff.mapper.MemberMapper">
 
-	<!--  스터디 멤버 조회(모달) : 신지혜 -->
+	<resultMap type="kr.or.ssff.member.domain.ApplyMemberDTO" id="applyMemberMap">
+		<id column="APPLY_IDX" property="apply_idx"/>
+		<result column="R_IDX" property="r_idx"/>
+		<result column="MEMBER_NAME" property="member_name"/>
+		<result column="STUDY_JOIN_ARCIWF" property="study_join_arciwf"/>
+		<result column="STUDY_JOIN_CHANGE_DATE" property="study_join_change_date"/>
+		<result column="STUDY_BOSS_YN" property="study_boss_yn"/>
+		<result column="ATTENDANCE_DAYS" property="attendance_days"/>
+		
+		<association javaType="kr.or.ssff.study.domain.RecruitBoardDTO" property="recruitBoardDTO">
+			<id column="R_IDX" property="r_idx"/>
+			<result column="MEMBER_NAME" property="member_name"/>
+			<result column="TYPE_PC" property="type_pc"/>
+			<result column="TITLE" property="title"/>
+			<result column="TEAMNAME" property="teamname"/>
+			<result column="CONT" property="cont"/>
+			<result column="DEAD_OK" property="dead_ok"/>
+		</association>
+	</resultMap>
+
+
+	
+		<!--  스터디 멤버 조회 : 신지혜 / 민주 리스트 출력화면에서 쓰려면 문구 추가하면 되니까 얘기해줘! -->
 	<select 
 		id="getApplyMemberList"
-		resultType="kr.or.ssff.member.domain.ApplyMemberVO">
-      
-      
-	        SELECT
-	            /*+ member_name_asc(apply_member) */ * <!-- 닉네임순 정렬 -->
-	        FROM apply_member 
-	        WHERE r_idx = 9001 				<!-- //TODO 멤버조회 클릭한 스터디의 번호 -->
-            AND study_join_arciwf='i'		<!-- 가입상태는 i (가입중) -->
+		parameterType="Integer"
+		resultMap ="applyMemberMap">       
+		
+SELECT /*+ member_name_asc(apply_member) */ * 
+FROM (SELECT r.r_idx, r.teamname, a.apply_idx,a.member_Name, a.study_join_arciwf, a.study_join_change_date, a.study_boss_yn, a.attendance_days 
+FROM recruit_board r JOIN  apply_member a on r.r_idx=a.r_idx) 
+WHERE r_idx = #{r_idx}			
+AND study_join_arciwf='i'
+
 
 	</select>
-	
 
 </mapper>
 
