@@ -252,8 +252,13 @@ public class StudyInsController implements InitializingBean, DisposableBean {
      * 반환: 스터디 게시물 상세 뷰단
      * */
     @PostMapping("/board/detail/modify")
-    public String studyBoardDetailModify(StudyInsDTO studyInsDTO) {
-        log.debug("studyBoardDetailModify({}) is invoked", "studyInsDTO = " + studyInsDTO);
+    public String studyBoardDetailModify(StudyInsDTO studyIns, RedirectAttributes rttrs) {
+        log.info("studyBoardDetailModify({} , {} ) is invoked", "studyIns = " + studyIns ,", rttrs = " + rttrs);
+
+        Objects.requireNonNull(service);
+        if (service.modify(studyIns)) {
+            rttrs.addFlashAttribute("result", "success");
+        }
 
         return "redirect:studyIns/board/detail";
     } // studyBoardDetailModify
