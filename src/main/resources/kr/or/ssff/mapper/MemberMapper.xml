@@ -23,6 +23,12 @@
 			<result column="CONT" property="cont"/>
 			<result column="DEAD_OK" property="dead_ok"/>
 		</association>
+
+		<association javaType="kr.or.ssff.member.domain.MemberDTO" property="memberDTO">
+			<id column="MEMBER_NAME" property="member_name"/>
+			<result column="MEMBER_PROFILE" property="member_profile"/>
+		</association>
+
 	</resultMap>
 
 	
@@ -32,11 +38,13 @@
 		parameterType="Integer"
 		resultMap ="applyMemberMap">
 		<![CDATA[
-		SELECT /*+ member_name_asc(apply_member) */ * 
-		FROM (SELECT r.r_idx, r.teamname, a.apply_idx,a.member_Name, a.study_join_arciwf, a.study_join_change_date, a.study_boss_yn, a.attendance_days 
-		FROM recruit_board r JOIN  apply_member a on r.r_idx=a.r_idx) 
+		SELECT /*+ member_name_asc(apply_member) */ *
+		FROM (SELECT r.r_idx, r.teamname, a.apply_idx,a.member_Name, a.study_join_arciwf, a.study_join_change_date, a.study_boss_yn, a.attendance_days, m.member_profile
+					FROM recruit_board r JOIN  apply_member a on r.r_idx=a.r_idx
+															 JOIN member m
+																		on a.member_Name = m.member_Name)
 		WHERE r_idx > #{r_idx} and r_idx < 9020
-		AND study_join_arciwf='i'
+
 ]]>
 	</select>
 
