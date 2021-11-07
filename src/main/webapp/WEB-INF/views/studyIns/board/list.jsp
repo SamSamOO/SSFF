@@ -28,7 +28,7 @@
 
 
 
-                self.location = "/studyIns/board/postGo";
+                self.location = "/studyIns/board/post";
             });
         });
     </script>

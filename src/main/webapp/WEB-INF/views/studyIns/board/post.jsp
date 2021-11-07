@@ -21,6 +21,11 @@
 
                 self.location = "/studyIns/board/list";
             });
+
+            $(`#regBtn`).on(`click`, function () {
+                console.log("등록 버튼 클릭");
+
+            });
         });
     </script>
 </head>
@@ -84,24 +89,26 @@
                             <!--카드 바디 시작-->
                             <div class="card-header border-0 pt-5 card-body mt-5">
                                 <div class="d-flex flex-row flex-column-fluid container">
-                                    <form action="/studyIns/board/detail/modify" method="post">
+                                    <form action="/studyIns/board/post" method="post">
 
                                         <input type="hidden" name="cont_No" value="<c:out value='${detail.cont_No}'/> "/>
                                         <table style="width: 100%">
 
                                             <tr>
                                                 <td class="row"><label for="title">제목 : </label>
-                                                    <input id="title" maxlength="50" value="${detail.title}" name="title">
+                                                    <input id="title" maxlength="50" value="" name="title">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><label for="nickname">닉네임 : </label>
+                                                    <input id="nickname" maxlength="20" value="" name="nickname">
                                                 </td>
                                             </tr>
 
-                                            <tr>
-                                                <td>${detail.member_Name}</td>
-                                            </tr>
 
                                             <tr>
-                                                <td class="row"><label for="cont">내용 : </label>
-                                                    <input id="cont" maxlength="5000" value="${detail.cont}" name="cont">
+                                                <td><label for="cont">내용 : </label>
+                                                    <input id="cont" maxlength="2000" value="" name="cont">
                                                 </td>
                                             </tr>
 
@@ -109,12 +116,10 @@
                                                 <td>
                                                     <div class="container">
                                                         <select name="category" class="selectpicker">
-                                                            <option value="인증"
-                                                                    <c:if test="${detail.category eq '인증'}">selected</c:if> >인증
-                                                            </option>
-                                                            <option value="잡담" <c:if test="${detail.category eq '잡담'}">selected</c:if>>잡담</option>
-                                                            <option value="QnA" <c:if test="${detail.category eq 'QnA'}">selected</c:if>>QnA</option>
-                                                            <option value="기타" <c:if test="${detail.category eq '기타'}">selected</c:if>>기타</option>
+                                                            <option value="인증" selected>인증</option>
+                                                            <option value="잡담">잡담</option>
+                                                            <option value="QnA" >QnA</option>
+                                                            <option value="기타" >기타</option>
                                                         </select>
                                                     </div>
                                                 </td>
@@ -123,9 +128,12 @@
                                                 <td></td>
                                             </tr>
                                             <tr>
-                                                <td colspan="6"></td>
                                                 <td colspan="2">
-                                                    <button type="submit" id="submitBtn">수정하기</button>
+                                                    <button type="submit" id="fileuploadBtn">파일 업로드</button>
+                                                </td>
+                                                <td colspan="4"></td>
+                                                <td colspan="2">
+                                                    <button type="submit" id="submitBtn">등록하기</button>
                                                     <button type="button" id="listBtn">목록으로</button>
                                                 </td>
                                             </tr>
