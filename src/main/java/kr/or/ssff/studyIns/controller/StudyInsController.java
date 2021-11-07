@@ -253,7 +253,7 @@ public class StudyInsController implements InitializingBean, DisposableBean {
      * */
     @PostMapping("/board/detail/modify")
     public String studyBoardDetailModify(StudyInsDTO studyIns, RedirectAttributes rttrs) {
-        log.info("studyBoardDetailModify({} , {} ) is invoked", "studyIns = " + studyIns ,", rttrs = " + rttrs);
+        log.info("studyBoardDetailModify({} , {} ) is invoked", "studyIns = " + studyIns, ", rttrs = " + rttrs);
 
         Objects.requireNonNull(service);
         if (service.modify(studyIns)) {
@@ -268,11 +268,11 @@ public class StudyInsController implements InitializingBean, DisposableBean {
      * 매개변수:
      * 반환: 스터디 게시물 생성페이지 뷰단
      * */
-    @PostMapping("/board/postGo")
+    @GetMapping("/board/postGo")
     public String studyBoardPostGo() {
         log.debug("studyBoardPostGo() is invoked");
 
-        return "studyIns/board/postGo";
+        return "/studyIns/board/postGo";
     } // studyBoardPostGo
 
     /*
