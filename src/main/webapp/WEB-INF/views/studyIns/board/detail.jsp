@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <!--
 Template Name: Metronic - Bootstrap 4 HTML, React, Angular 10 & VueJS Admin Dashboard Theme
@@ -49,9 +50,46 @@ License: You must have a valid license purchased only from themeforest(the above
             <!--컨테이너 시작-->
 
             <div class="d-flex flex-row flex-column-fluid container">
-                <div class="page-header">
-                    <h1>Example page header <small>Subtext for header</small></h1>
-                </div>
+                <table style="width: 70%; border: 2px!important;">
+                    <tr>
+                        <th align="left" height="50px"><a href="javascript:history.back()">뒤로가기 들어갈곳</a></th>
+                    </tr>
+                    <tr>
+                        <th style="text-align: center; font-weight: bold; font-size: 32px;height: 200px">제목 들어가는 곳${title}</th>
+                    </tr>
+                    <tr style="height: 100px; width: 80%">
+                        <td colspan="3">카테고리들어가는곳${category}</td>
+                        <td>조회수</td>
+                        <%--세션아이디와 현재글 닉네임과 동일한 경우 수정 삭제버튼 보입니다. --%>
+                        <c:if test="${sessionScope.userName==member_Name}">
+
+                            <td colspan="3">
+                                <input type="button" value="수정"/>
+                                <input type="button" value="삭제"/>
+                            </td>
+
+                        </c:if>
+                        <%----%>
+                        <td >닉네임</td>
+                    </tr>
+                    <tr>
+                        <th colspan="4">다운로드</th>
+                        <td colspan="4"><a href="">파일이름</a> </td>
+                    </tr>
+                    <tr style="height: 600px; width: 80%">
+                        <td colspan="8">컨텐츠 내용컨텐츠 내용컨텐츠 내용컨텐츠 내용컨텐츠 내용컨텐츠 내용컨텐츠 내용컨텐츠 내용컨텐츠 내용컨텐츠 내용컨텐츠 내용
+                    </tr>
+                    <tr>
+                        <td> 첨부 파일</td>
+                        <td>
+                            <c:if test="${fileName !=null && !empty fileName}">
+                                ${fileName} 파일네임
+                            </c:if>
+                        </td>
+                    </tr>
+
+
+                </table>
 
             </div>
             <!--컨테이너 종료-->

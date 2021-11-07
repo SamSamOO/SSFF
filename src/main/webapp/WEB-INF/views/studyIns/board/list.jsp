@@ -10,6 +10,7 @@
     <title>스터디 내 게시판</title>
     <!--head.html Include-->
     <jsp:include page="/WEB-INF/commons/head.jsp"></jsp:include>
+    <script type="text/javascript" src="/resources/assets/js/pagination/pagination.js"></script>
 </head>
 
 <!----------------Head 종료----------------------->
@@ -86,13 +87,24 @@
                         </tr>
                     </c:forEach>
 
+
+
                     </tbody>
                 </table>
+
             </div>
             <!--컨테이너 종료-->
             <!--footer.html Include-->
             <jsp:include page="/WEB-INF/commons/footer.jsp"></jsp:include>
 </body>
 <!----------------Body 종료----------------------->
-
+<script>
+    $('#pagination-demo').twbsPagination({
+        totalPages: 35,
+        visiblePages: 7,
+        onPageClick: function (event, page) {
+            $('#page-content').text('Page ' + page);
+        }
+    });
+</script>
 </html>
