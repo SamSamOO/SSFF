@@ -90,19 +90,19 @@
                                         </div>
                                         <!--parameter 3 : 언어태그-->
                                         <div id="lang-sec">
-                                            <ul>
+                                            <ul id="lang-sec-ul">
                                                 <li>
                                                     <span>사용 언어 :</span>
                                                 </li>
                                                 <li>
-                                                    <div class="dropdown">
+                                                    <div class="dropdown" style="margin-right: 15px">
                                                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                             언어 선택
                                                         </button>
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                            <a class="dropdown-item" href="#">Action</a>
-                                                            <a class="dropdown-item" href="#">Another action</a>
-                                                            <a class="dropdown-item" href="#">Something else here</a>
+                                                            <a class="dropdown-item" onclick="tagClick('javascript')">javascript</a>
+                                                            <a class="dropdown-item" onclick="tagClick('typescript')">typescript</a>
+                                                            <a class="dropdown-item" onclick="tagClick('react')">react</a>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -153,5 +153,20 @@
       placeholder: '최대 2048자까지 쓸 수 있습니다'	//placeholder 설정
     });
   });
+
+function tagClick(name){
+    console.log(name);
+
+    let tagArea = document.querySelector('#lang-sec-ul');
+    let new_pTag = document.createElement('li');
+
+    new_pTag.setAttribute('class', 'mini-tag');
+    new_pTag.innerHTML = name+" ";
+    new_pTag.innerHTML +='<span onclick=tagRemove('+name+')>x</span>';
+    tagArea.appendChild(new_pTag);
+}
+function tagRemove(name){
+    console.log(name); /*this target 써볼것*/
+}
 </script>
 </html>
