@@ -85,49 +85,7 @@
 
                         </tr>
                     </c:forEach>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>카테고리</td>
-                        <td>제목</td>
-                        <td>내용</td>
-                        <td>닉네임</td>
-                        <td>작성일자</td>
-                        <td>
 
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">${contNo}</th>
-                        <td>${title}</td>
-                        <td>${cont}</td>
-                        <td>${nickName}</td>
-                        <td>${writeDate}</td>
-                        <td>
-                <span class="label label-inline label-light-primary font-weight-bold">
-                    작성일자
-                </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Ana</td>
-                        <td>Jacobs</td>
-                        <td>
-                <span class="label label-inline label-light-success font-weight-bold">
-                    Approved
-                </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>Pettis</td>
-                        <td>
-                <span class="label label-inline label-light-danger font-weight-bold">
-                    New
-                </span>
-                        </td>
-                    </tr>
                     </tbody>
                 </table>
             </div>

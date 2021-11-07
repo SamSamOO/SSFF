@@ -2,6 +2,7 @@ package kr.or.ssff.mapper;
 
 import java.util.List;
 import kr.or.ssff.studyIns.domain.StudyInsVO;
+import org.apache.ibatis.annotations.Select;
 
 
 /*
