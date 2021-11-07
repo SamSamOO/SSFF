@@ -10,6 +10,14 @@
     <title>스터디 내 게시판</title>
     <!--head.html Include-->
     <jsp:include page="/WEB-INF/commons/head.jsp"></jsp:include>
+    </style>
+
+    <script type="text/javascript" src="/resources/assets/js/pagination/pagination.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
+    </style>
 </head>
 
 <!----------------Head 종료----------------------->
@@ -73,7 +81,7 @@
                         <tr>
                             <th scope="row">${list.cont_No}</th>
                             <td>${list.category}</td>
-                            <td><a href="/studyIns/detail?cont_No=${list.cont_No}">${list.title}<a/></td>
+                            <td><a href="/studyIns/board/detail?cont_No=<c:out value="${list.cont_No}"/> "><c:out value="${list.title}"/> <a/></td>
                             <td>${list.cont}</td>
                             <td>${list.member_Name}</td>
                             <td>
@@ -86,13 +94,24 @@
                         </tr>
                     </c:forEach>
 
+
+
                     </tbody>
                 </table>
+
             </div>
             <!--컨테이너 종료-->
             <!--footer.html Include-->
             <jsp:include page="/WEB-INF/commons/footer.jsp"></jsp:include>
 </body>
 <!----------------Body 종료----------------------->
-
+<script>
+    $('#pagination-demo').twbsPagination({
+        totalPages: 35,
+        visiblePages: 7,
+        onPageClick: function (event, page) {
+            $('#page-content').text('Page ' + page);
+        }
+    });
+</script>
 </html>

@@ -13,4 +13,7 @@ public interface StudyInsMapper {
 
     public List<StudyInsVO> getList();
 
+    public StudyInsVO read(Integer cont_No);
+
+    public boolean remove(Integer cont_No);
 }
