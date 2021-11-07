@@ -231,11 +231,16 @@ public class StudyInsController implements InitializingBean, DisposableBean {
      * 매개변수: 게시물번호
      * 반환: 스터디 게시물 수정페이지 뷰단
      * */
-    @PostMapping("/board/detail/modifyGo")
-    public String studyBoardDetailModifyGo(String boardNo) {
-        log.debug("studyBoardDetailModifyGo({}) is invoked", "boardNo = " + boardNo);
+    @GetMapping("/board/detail/modifyGo")
+    public String studyBoardDetailModifyGo(@RequestParam Integer cont_No,Model model) throws Exception {
+        log.debug("studyBoardDetailModifyGo({}) is invoked", "cont_No = " + cont_No);
 
-        return "studyIns/board/modifyGo";
+        Objects.requireNonNull(service);
+        StudyInsVO modifyDetail = service.get(cont_No);
+        log.debug("modifyDetail = {}", modifyDetail);
+
+        model.addAttribute("board", modifyDetail);
+        return "/studyIns/board/modify";
     } // studyBoardDetailModifyGo
 
     /*

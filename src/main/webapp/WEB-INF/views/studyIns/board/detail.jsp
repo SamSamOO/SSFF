@@ -20,7 +20,7 @@
             $(`#modifyBtn`).on('click', function () {
                 console.log("수정 버튼 클릭");
 
-                self.location = '/studyIns/board/detail/modify?cont_No=<c:out value="${detail.cont_No}"/>';
+                self.location = '/studyIns/board/detail/modifyGo?cont_No=<c:out value="${detail.cont_No}"/>';
             }); // onclick
 
             $(`#removeBtn`).on('click', function () {
@@ -58,7 +58,7 @@
             <div class="d-flex flex-row flex-column-fluid container">
                 <form action="/studyIns/board/detail/modify" method="POST">
                     <input type="hidden" name="cont_No" value="<c:out value='${detail.cont_No}' />">
-                    <table style="width: 70%; border: 2px!important;">
+                    <table style="width: 100%;  border-radius: 10px; border-style: hidden ; !important;">
                         <tr>
                             <th align="left" height="50px"><a href="javascript:history.back()">뒤로가기 들어갈곳</a></th>
                         </tr>
@@ -101,6 +101,7 @@
             <%--컨테이너 종료--%>
             <!--footer.html Include-->
             <jsp:include page="/WEB-INF/commons/footer.jsp"></jsp:include>
+        </div>
 </body>
 <!----------------Body 종료----------------------->
 </html>
