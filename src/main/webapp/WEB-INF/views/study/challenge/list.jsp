@@ -5,6 +5,7 @@
 <!----------------Head 시작----------------------->
 
 <head>
+    <link href="../../../../resources/assets/css/yesol.css" rel="stylesheet" type="text/css">
     <title>챌린지 리스트</title>
     <!--head.html Include-->
     <jsp:include page="../../../commons/head.jsp"/>
@@ -76,6 +77,11 @@
                                     <!--스터디리스트 헤더 주황색 부분-->
                                     <h1>챌린지 팀원 찾기</h1>
                                     <h3>인생을 바꿀 습관을 만들어 보세요!삼삼오오가 도와드립니다</h3>
+                                    <br><br>
+                                    <ul>
+                                        <li><a href="/study/challenge/postGo"><img src="../../../../resources/assets/image/writingBtn.png" width="70px"></a></li>
+                                        <li>글쓰러 가기!</li>
+                                    </ul>
                                 </div>
 
                                 <div class="studylist-nav">
