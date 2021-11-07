@@ -21,7 +21,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Log4j2
 @AllArgsConstructor
 
-@RequestMapping("/studyIns/*")
+@RequestMapping("/studyIns")
 @Controller("studyInsController")
 
 public class StudyInsController implements InitializingBean, DisposableBean {
@@ -232,14 +232,17 @@ public class StudyInsController implements InitializingBean, DisposableBean {
      * 반환: 스터디 게시물 수정페이지 뷰단
      * */
     @GetMapping("/board/detail/modifyGo")
-    public String studyBoardDetailModifyGo(@RequestParam Integer cont_No,Model model) throws Exception {
+    public String studyBoardDetailModifyGo(@RequestParam Integer cont_No, Model model) throws Exception {
+
         log.debug("studyBoardDetailModifyGo({}) is invoked", "cont_No = " + cont_No);
 
         Objects.requireNonNull(service);
-        StudyInsVO modifyDetail = service.get(cont_No);
-        log.debug("modifyDetail = {}", modifyDetail);
+        StudyInsVO detail = service.get(cont_No);
 
-        model.addAttribute("board", modifyDetail);
+        log.debug("modifyDetail = {}", detail);
+
+        model.addAttribute("detail", detail);
+
         return "/studyIns/board/modify";
     } // studyBoardDetailModifyGo
 
