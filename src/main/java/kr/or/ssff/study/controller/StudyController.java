@@ -37,7 +37,7 @@ public class StudyController {
 
         log.info("challengeListGo() is invoked");
 
-        return "study/challenge/list";
+        return "study/challenge/list";//매핑O , DB X , paging X
     } //  selectChallengeListGo
 
     /*챌린지형 스터디 게시물 상세 +
@@ -57,12 +57,12 @@ public class StudyController {
      * 파라메터 :
      * 반환 : 챌린지형 스터디 게시글 등록 페이지
      * */
-    @GetMapping("/challenge/list/postGo")
+    @GetMapping("/challenge/postGo")
     public String insertChallengeDetailGo() {
 
         log.info("insertChallengeDetailGo() is invoked");
 
-        return "study/challenge/list/post";
+        return "study/challenge/post";
     } // insertChallengeDetailGo
 
     /*챌린지형 게시글 등록 기능을 수행합니다
@@ -128,7 +128,7 @@ public class StudyController {
 
         log.info("selectProjectListGo() is invoked");
 
-        return "study/project/list";
+        return "study/project/list"; //매핑O , DB X , paging X
     } // selectProjectListGo
 
     /*챌린지형 스터디 게시물 상세 +
@@ -148,12 +148,12 @@ public class StudyController {
      * 파라메터 :
      * 반환 : 챌린지형 스터디 게시글 등록 페이지
      * */
-    @GetMapping("/project/list/postGo")
+    @GetMapping("/project/postGo")
     public String insertProjectDetailGo() {
 
         log.info("insertProjectDetailGo() is invoked");
 
-        return "study/project/list/post";
+        return "study/project/post";
     } // insertProjectDetailGo
 
     /*챌린지형 게시글 등록 기능을 수행합니다

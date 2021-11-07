@@ -4,26 +4,35 @@
   background-color: rgb(235, 171, 49);
   display: inline-block;
   width: 100%;
-  height: 40%;
+  height: 35%;
   border-radius: 30px;
+  padding-right:30px;
 }
 .studylist-header-chal {
   /*챌린지 스터디리스트 헤더 초록색 부분*/
   background-color: rgb(107,152,79);
   display: inline-block;
   width: 100%;
-  height: 40%;
+  height: 35%;
   border-radius: 30px;
+  padding-right:30px;
 }
 h1 {
   color: white;
-  padding-top: 150px;
+  padding-top: 130px;
   text-align: center;
 }
 h3 {
   color: white;
   padding-top: 25px;
   text-align: center;
+}
+.studylist-header ul , .studylist-header-chal ul{
+  list-style: none;
+}
+.studylist-header li, .studylist-header-chal li{
+  color:white;
+  float: right;
 }
 
 /*********************네비 설정********************************/
@@ -163,7 +172,7 @@ h3 {
 }
 .studylist-content-info .span-cate{
   /*카드뉴스 안에 지역이랑 유형 있는 부분(챌린지에서) 지역*/
-  background-color: cornflowerblue;
+  background-color: rgb(146,208,86);
   color: white;
   padding:5px;
   border-radius: 5px;
@@ -188,8 +197,72 @@ h3 {
   /*카드뉴스안에 댓글이랑 조회수*/
   margin-left: 4px;
   margin-right: 4px;
-
   float: left;
 }
 
 /*********************카드뉴스 설정********************************/
+
+
+/*********************글쓰기단************************************/
+#post-body-wrapper{
+  display: flex;
+  justify-content: center;
+}
+
+#post-body input[type=text]{
+  height:40px;
+  width:100%;
+  border: none;
+  border-bottom: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin:20px;
+}
+#lang-sec{
+  margin-top:20px;
+  margin-bottom:20px;
+  display:inline-block;
+}
+#lang-sec span{
+  font-size: 16px;
+  font-weight: 500;
+
+}
+#lang-sec ul{
+  list-style: none;
+}
+#lang-sec li{
+  float: left;
+}
+#lang-sec .mini-tag{
+  background-color: black;
+  border-radius: 4px;
+  margin-right:10px;
+  padding: 3px 5px;
+  color: white;
+}
+.mini-tag span{
+  color:red;
+}
+#button-sec ul{
+  list-style: none;
+}
+#button-sec li{
+  float: right;
+  background-color: black;
+  margin-left:10px;
+  padding: 10px 13px;
+  color:white;
+  border-radius: 5px;
+  border:1px solid black;
+  transition-duration:0.5s;
+}
+#button-sec li:hover{
+  cursor: pointer;
+  background-color: white;
+  border:1px solid black;
+  color:black;
+}
+

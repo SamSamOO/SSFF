@@ -7,33 +7,21 @@
 
 <head>
     <title>게시물 상세 페이지입니다</title>
+
     <!--head.html Include-->
     <jsp:include page="/WEB-INF/commons/head.jsp"></jsp:include>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
 
     <script>
         $(function () {
             console.clear();
-            console.debug("제이쿼리 시작 ㅇㅇ");
+            console.debug("제이쿼리 시작");
 
-            $(`#modifyBtn`).on('click', function () {
-                console.log("수정 버튼 클릭");
+            $(`#listBtn`).on(`click`, function () {
+                console.log("리스트 버튼 클릭");
 
-                self.location = '/studyIns/board/detail/modifyGo?cont_No=<c:out value="${detail.cont_No}"/>';
-            }); // onclick
-
-            $(`#removeBtn`).on('click', function () {
-                console.log("삭제 버튼 클릭");
-
-                <%--self.location = '/studyIns/board/detail/remove?cont_No=<c:out value="${detail.cont_No}"/> ';--%>
-                let formObj = $('form');
-
-                formObj.attr('method', 'POST');
-                formObj.attr('action', '/studyIns/board/detail/remove');
-                formObj.submit();
-            }); // onclick
-        }); // jq
+                self.location = "/studyIns/board/list";
+            });
+        });
     </script>
 </head>
 
@@ -93,54 +81,54 @@
 
                         <!--풀 사이즈 카드 시작 / 카드 필요 없으면 여기서부터 밀기☆-->
                         <div class="card card-custom gutter-b card-stretch">
-
-                            <!--카드 Body 시작-->
+                            <!--카드 바디 시작-->
                             <div class="card-header border-0 pt-5 card-body mt-5">
+                                <div class="d-flex flex-row flex-column-fluid container">
+                                    <form action="/studyIns/board/detail/modify" method="post">
 
-                                    <form action="/studyIns/board/detail/modify" method="POST" style="width: 100%">
-                                        <input type="hidden" name="cont_No" value="<c:out value='${detail.cont_No}' />">
-                                        <table style="width: 100%;  border-radius: 10px; border-style: hidden ; !important;">
-                                            <tr>
-                                                <th align="left" height="50px"><a href="javascript:history.back()">뒤로가기 들어갈곳</a></th>
-                                            </tr>
-                                            <tr>
-                                                <th style="text-align: center; font-weight: bold; font-size: 32px;height: 200px">제목 들어가는 곳${detail.title}</th>
-                                            </tr>
-                                            <tr style="height: 100px">
-                                                <td colspan="4">카테고리들어가는곳${detail.category}</td>
-                                                <td colspan="1">${detail.hit}조회수</td>
-                                                <%--세션아이디와 현재글 닉네임과 동일한 경우 수정 삭제버튼 보입니다. --%>
+                                        <input type="hidden" name="cont_No" value="<c:out value='${detail.cont_No}'/> "/>
+                                        <table style="width: 100%">
 
-                                                <td colspan="4">
-                                                    <button type="button" id="modifyBtn">수정</button>
-                                                    <button type="button" id="removeBtn">삭제</button>
+                                            <tr>
+                                                <td class="row"><label for="title">제목 : </label>
+                                                    <input id="title" maxlength="50" value="${detail.title}" name="title">
                                                 </td>
+                                            </tr>
 
-                                                <%----%>
-                                                <td colspan="1">${detail.member_Name}닉네임</td>
-                                            </tr>
                                             <tr>
-                                                <th colspan="2">다운로드</th>
-                                                <td colspan="2"><a href="">파일이름</a></td>
-                                                <th colspan="1">작성일자</th>
-                                                <td colspan="2">${detail.write_Date}</td>
+                                                <td>${detail.member_Name}</td>
+                                            </tr>
 
-                                                <th colspan="1">수정일자</th>
-                                                <td colspan="12">${detail.modify_Date}</td>
-                                            </tr>
-                                            <tr style="height: 600px">
-                                                <td colspan="10">컨텐츠 내용컨텐츠 내용컨텐츠 내용컨텐츠 내용컨텐츠 내용컨텐츠 내용컨텐츠 내용컨텐츠 내용컨텐츠 내용컨텐츠 내용컨텐츠 내용
-                                            </tr>
                                             <tr>
-                                                <td> 첨부 파일</td>
+                                                <td class="row"><label for="cont">내용 : </label>
+                                                    <input id="cont" maxlength="50" value="${detail.cont}" name="cont">
+                                                </td>
+                                            </tr>
+
+                                            <tr>
                                                 <td>
-
-                                                    파일네임
-
+                                                    <div class="container">
+                                                        <select name="category" class="selectpicker">
+                                                            <option value="인증"
+                                                                    <c:if test="${detail.category eq '인증'}">selected</c:if> >인증
+                                                            </option>
+                                                            <option value="잡담" <c:if test="${detail.category eq '잡담'}">selected</c:if>>잡담</option>
+                                                            <option value="QnA" <c:if test="${detail.category eq 'QnA'}">selected</c:if>>QnA</option>
+                                                            <option value="기타" <c:if test="${detail.category eq '기타'}">selected</c:if>>기타</option>
+                                                        </select>
+                                                    </div>
                                                 </td>
                                             </tr>
-
-
+                                            <tr>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="6"></td>
+                                                <td colspan="2">
+                                                    <button type="submit" id="submitBtn">수정하기</button>
+                                                    <button type="button" id="listBtn">목록으로</button>
+                                                </td>
+                                            </tr>
                                         </table>
                                     </form>
                                 </div>
@@ -156,9 +144,11 @@
                     </div>
                     <!--end::Content Wrapper 내용물 종료-->
                 </div>
-                <%--컨테이너 종료--%>
-                <!--footer.html Include-->
-                <jsp:include page="/WEB-INF/commons/footer.jsp"></jsp:include>
+            </div>
+            <%--컨테이너 종료--%>
+
+            <!--footer.html Include-->
+            <jsp:include page="/WEB-INF/commons/footer.jsp"></jsp:include>
 </body>
 <!----------------Body 종료----------------------->
 </html>

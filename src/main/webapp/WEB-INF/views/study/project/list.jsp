@@ -5,6 +5,7 @@
 <!----------------Head 시작----------------------->
 
 <head>
+    <link href="../../resources/assets/css/yesol.css" rel="stylesheet" type="text/css">
     <title>프로젝트 리스트</title>
     <!--head.html Include-->
     <jsp:include page="../../../commons/head.jsp"/>
@@ -76,6 +77,10 @@
                                     <!--스터디리스트 헤더 주황색 부분-->
                                     <h1>프로젝트 팀원 찾기</h1>
                                     <h3>프로젝트를 함께할 든든한 팀원을 삼삼오오에서 찾아보세요</h3>
+                                    <ul>
+                                        <li><a href="/study/project/postGo"><img src="../../../../resources/assets/image/writingBtn.png" width="70px"></a></li>
+                                        <li>글쓰러 가기!</li>
+                                    </ul>
                                 </div>
 
                                 <div class="studylist-nav">
