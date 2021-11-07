@@ -2,8 +2,6 @@ package kr.or.ssff.member.controller;
 
 import java.util.List;
 
-import org.springframework.beans.factory.DisposableBean;
-import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,14 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import kr.or.ssff.member.domain.ApplyMemberVO;
+import kr.or.ssff.member.domain.ApplyMemberDTO;
 import kr.or.ssff.member.domain.MemberVO;
 import kr.or.ssff.member.service.MemberService;
-import kr.or.ssff.studyIns.controller.StudyInsController;
-import kr.or.ssff.studyIns.service.StudyInsService;
-import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
 
 /*
@@ -46,7 +40,7 @@ public class MemberController {
      * */
     @GetMapping("/joinGo")
     public String memberJoinGo() {
-        log.info("memberJoinGo() is invoked");
+        log.debug("memberJoinGo() is invoked");
 
         return "member/join";
     } // memberJoinGo
@@ -57,7 +51,7 @@ public class MemberController {
      * */
     @PostMapping("/join")
     public String memberJoin(MemberVO member)  {
-        log.info("join({}) is invoked", "member = " + member);
+        log.debug("join({}) is invoked", "member = " + member);
 
         return "redirect:/main";
     } // memberJoin
@@ -68,7 +62,7 @@ public class MemberController {
      * */
     @GetMapping("/loginGo")
     public String memberLoginGo() {
-        log.info("loginGo() is invoked");
+        log.debug("loginGo() is invoked");
 
         return "member/login";
     } // memberLoginGo
@@ -79,7 +73,7 @@ public class MemberController {
      * */
     @PostMapping("/login")
     public String memberLogin(String email, String password) {
-        log.info("login() is invoked");
+        log.debug("login() is invoked");
 
         return "redirect:/main";
     } // memberLogin
@@ -90,7 +84,7 @@ public class MemberController {
      * */
     @GetMapping("/myPage")
     public String myPageGo(String nickname) {
-        log.info("myPageGo({}) is invoked", "nickname = " + nickname);
+        log.debug("myPageGo({}) is invoked", "nickname = " + nickname);
 
         return "/member/myPage";
     } // myPageGo
@@ -101,7 +95,7 @@ public class MemberController {
      * */
     @GetMapping("/studyList")
     public String selectStudyList(String nickname) {
-        log.info("selectStudyList({}) is invoked", "nickname = " + nickname);
+        log.debug("selectStudyList({}) is invoked", "nickname = " + nickname);
 
         return "/member/studyList";
     } // studyListGo
@@ -112,11 +106,12 @@ public class MemberController {
      * 작성자: 신지혜 
      * */
     @GetMapping("/studyModalTest")
-    public void studyModalTest(Model model){
-
-      log.info("studyModalTest() is invoked");
+    public void studyModalTest(Integer r_idx, Model model){
+    	r_idx = 9003; //TODO 추후 클릭하는 스터디 정보로 변경 
+      log.debug("studyModalTest() is invoked");
       
-		List<ApplyMemberVO> applyMemberList = this.service.getApplyMemberList(); 
+		List<ApplyMemberDTO> applyMemberList = this.service.getApplyMemberList(r_idx); 
+		log.info("\t + >>>>>>>>>>>>>>>>applyMemberList:{}", applyMemberList);	
 		log.info("\t+ list size: {}", applyMemberList.size()); 
 		model.addAttribute("applyMemberList", applyMemberList); 
     } // studyModalTest
@@ -127,7 +122,7 @@ public class MemberController {
      * */
     @GetMapping("/reservationList")
     public String selectReservationList(String nickname) {
-        log.info("selectReservationList({}) is invoked", "nickname = " + nickname);
+        log.debug("selectReservationList({}) is invoked", "nickname = " + nickname);
 
         return "/member/reservationList";
     } // reservationList
@@ -138,7 +133,7 @@ public class MemberController {
      * */
     @GetMapping("/paymentList")
     public String selectPaymentList(String nickname) {
-        log.info("selectPaymentList({}) is invoked", "nickname = " + nickname);
+        log.debug("selectPaymentList({}) is invoked", "nickname = " + nickname);
 
         return "/member/paymentList";
     } // paymentList
@@ -149,7 +144,7 @@ public class MemberController {
      * */
     @PostMapping("/withdrawal")
     public String withdrawal(String nickname) {
-        log.info("withdrawal({}) is invoked", "nickname = " + nickname);
+        log.debug("withdrawal({}) is invoked", "nickname = " + nickname);
 
         return "redirect:/main";
     } // withdrawal
@@ -160,7 +155,7 @@ public class MemberController {
      * */
     @GetMapping("/idPwFindGo")
     public String idPwFindGo(String nickname) {
-        log.info("idPwFindGo({}) is invoked", "nickname = " + nickname);
+        log.debug("idPwFindGo({}) is invoked", "nickname = " + nickname);
 
         return "/member/idPwFind";
     }
@@ -171,7 +166,7 @@ public class MemberController {
      * */
     @GetMapping("/transactionList")
     public String selectTransactionList(String nickname) {
-        log.info("selectTransactionList({}) is invoked", "nickname = " + nickname);
+        log.debug("selectTransactionList({}) is invoked", "nickname = " + nickname);
 
         return "/member/transactionList";
     }
@@ -184,7 +179,7 @@ public class MemberController {
      */
     @PostMapping("/remit")
     public String remit() {
-        log.info("remit() is invoked");
+        log.debug("remit() is invoked");
 
         return null;
     }

@@ -2,15 +2,13 @@ package kr.or.ssff.member.service;
 
 import java.util.List;
 
-
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.or.ssff.mapper.MemberMapper;
-import kr.or.ssff.mapper.StudyInsMapper;
-import kr.or.ssff.member.domain.ApplyMemberVO;
+import kr.or.ssff.member.domain.ApplyMemberDTO;
 import lombok.AllArgsConstructor;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
@@ -71,12 +69,13 @@ public class MemberServiceImpl implements MemberService, InitializingBean, Dispo
 	   * 작성자	: 신지혜 
 	   */
 	@Override
-	public List<ApplyMemberVO> getApplyMemberList() {
-
+	public List<ApplyMemberDTO> getApplyMemberList(Integer r_idx) {
+		//TODO 추후 클릭하는 스터디로 변경해야해~
+		r_idx= 9003; 
 		log.debug("getApplyMemberList({}) invoked");
 	
 		
-		List<ApplyMemberVO> allApplyMemberList = this.mapper.getApplyMemberList();
+		List<ApplyMemberDTO> allApplyMemberList = this.mapper.getApplyMemberList(r_idx);
 		log.info("\t + allApplyMemberList:{}", allApplyMemberList);		
 		
 		return allApplyMemberList; 

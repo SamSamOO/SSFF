@@ -3,9 +3,7 @@ package kr.or.ssff.member.domain;
 import java.sql.Date;
 
 import kr.or.ssff.study.domain.RecruitBoardDTO;
-import kr.or.ssff.study.domain.RecruitBoardVO;
 import lombok.Data;
-import lombok.Value;
 
 /*
  * 최초 작성자: 신지혜
@@ -22,8 +20,8 @@ STUDY_BOSS_YN			CHAR(1 BYTE)		No	'n' 6	개설자여부
 ATTENDANCE_DAYS			NUMBER				Yes		7	누적출석일수
  */
 
-@Value
-public class ApplyMemberVO {
+@Data
+public class ApplyMemberDTO {
 	private String apply_idx;
 	private Integer r_idx;
 	private String member_name;
@@ -32,6 +30,8 @@ public class ApplyMemberVO {
 	private Character study_boss_yn;
 	private Integer attendance_days;
 	
+	private RecruitBoardDTO recruitBoardDTO;
+
 } // end class
 
 

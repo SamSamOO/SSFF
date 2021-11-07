@@ -42,9 +42,10 @@ License: You must have a valid license purchased only from themeforest(the above
 
 <body id="kt_body" class="header-fixed subheader-enabled page-loading">
 	<hr>
+	
 		<!-- Model객체 전달여부 확인 좀 할게요 -->
 		1. applyMemberList: ${applyMemberList} 
-		2. applyMemberList: ${applyMemberList.getClass().getName()}		
+		1. applyMemberList: ${applyMemberList[0].recruitBoardDTO.teamname} 
 	<hr>
 	<!----------------메인 시작----------------------->
 	<div class="d-flex flex-column flex-root">
@@ -148,34 +149,36 @@ License: You must have a valid license purchased only from themeforest(the above
 												<th data-field="Number" class="datatable-cell datatable-cell-sort" style="width: 10%;">
 													<span>#</span></th>
 												
-												<th data-field="studyTeamName" class="datatable-cell datatable-cell-sort" style="width: 45%; text-align: center;">
+												<th data-field="studyTeamName" class="datatable-cell datatable-cell-sort" style="width: 45%; ">
 													<span style="text-align: center;">study&nbsp;Team&nbsp;Name</span></th>
 												
-												<th data-field="NickName" class="datatable-cell datatable-cell-sort" style="width: 40%; text-align: center;">
+												<th data-field="NickName" class="datatable-cell datatable-cell-sort" style="width: 40%; ">
 													<span style="text-align: center;">NickName</span></th>
 											</tr>
 											</thead>
 											
 											<tbody class="datatable-body ps">
+											<c:set var="i" value="1"/>
 											<c:forEach items="${applyMemberList}" var="applyMemberList">
 											<tr data-row="0" class="datatable-row" style="left: 0px;">
 												<td class="datatable-cell" data-field="" style="width: 5%;"><span>&nbsp;</span>
 												</td>
 												
 												<td class="datatable-cell" data-field="Number"
-														aria-label="=순번1el..?" style="width: 10%;"><span>1</span>
+														aria-label="${i}" style="width: 10%;"><span>${i}</span>
 												</td>
 												
 												<td class="datatable-cell" data-field="studyTeamName"
-														aria-label="=팀이름el" style="width: 45%;"><span>${applyMemberList.r_idx}</span>
+														aria-label="${applyMemberList.recruitBoardDTO.teamname}" style="width: 45%;"><span>${applyMemberList.recruitBoardDTO.teamname} </span>
 												</td>
 												
-												<td data-field="NickName" aria-label="=회원닉el" class="datatable-cell" style="width: 40%;">
+												<td data-field="NickName" aria-label="${applyMemberList.member_name}" class="datatable-cell" style="width: 40%;">
 													<span>
 														<img class="symbol symbol-40 symbol-sm flex-shrink-0" src="https://lh3.googleusercontent.com/ogw/ADea4I7X5V09iCZFEJgv24Lx02Z__PQ9LalGRvCTEHE6=s32-c-mo" alt="photo">
-													{applyMemberList.member_name}</span>
+													${applyMemberList.member_name}</span>
 												</td>												
 											</tr>
+											<c:set var="i" value="${i+1}"/>
 											</c:forEach>
 											<div class="ps__rail-x" style="left: 0px; bottom: 0px;">
 												<div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
