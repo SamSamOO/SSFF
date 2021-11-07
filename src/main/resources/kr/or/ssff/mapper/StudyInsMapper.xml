@@ -4,15 +4,13 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="kr.or.ssff.mapper.StudyInsMapper">
-    <select id="getList" resultType="kr.or.ssff.studyIns.domain.StudyInsVO">
+    <delete id="remove">
 
-    <![CDATA[
-        select /*+ cont_no_desc(si_board) */ *
+        delete
         from si_board
-        where cont_no < 100
-        ]]>
+        where cont_No = #{cont_No}
 
-    </select>
+    </delete>
 
     <select id="read" resultType="kr.or.ssff.studyIns.domain.StudyInsVO">
 
@@ -24,11 +22,21 @@
 
 	</select>
 
-    <delete id="remove">
+    <select id="getList" resultType="kr.or.ssff.studyIns.domain.StudyInsVO">
 
-        delete
+    <![CDATA[
+        select /*+ cont_no_desc(si_board) */ *
         from si_board
-        where cont_No = #{cont_No}
+        where cont_no < 100
+        ]]>
 
-    </delete>
+    </select>
+    <update id="update">
+        update si_board
+        set title=#{title},
+            cont=#{cont},
+            modify_Date=sysdate,
+            category=#{category}
+        where cont_No = #{cont_No}
+    </update>
 </mapper>
