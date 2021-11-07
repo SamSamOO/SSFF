@@ -305,18 +305,19 @@ License: You must have a valid license purchased only from themeforest(the above
                     </thead>
         
                     <tbody class="datatable-body ps">
-                    <c:set var="i" value="0"/>
-                    <c:set var="a" value="i"/>
+                    <c:set var="num" value="0"/>
+                   
                     <c:forEach items="${applyMemberList}" var="applyMemberList">
+                     <c:if test="${applyMemberList.study_join_arciwf eq 105}">
                      
                       
-                          <c:set var="i" value="${i+1}"/>
-                          <tr data-row="${i}" class="datatable-row" style="left: 0px;">
+                          <c:set var="num" value="${num+1}"/>
+                          <tr data-row="${num}" class="datatable-row" style="left: 0px;">
                             <td class="datatable-cell" data-field=""
                                 style="width: 5%;"><span>&nbsp;</span></td>
                 
                             <td class="datatable-cell" data-field="Number"
-                                aria-label="${i}" style="width: 5%;"><span>${i}</span>
+                                aria-label="${num}" style="width: 5%;"><span>${num}</span>
                             </td>
                             <td class="datatable-cell" data-field="applyIdx"
                                 aria-label="${applyMemberList.apply_idx}"
@@ -353,7 +354,7 @@ License: You must have a valid license purchased only from themeforest(the above
                           </tr>
 
                      
-           
+           </c:if>
                     </c:forEach>
                     <div class="ps__rail-x">
                       <div class="ps__thumb-x" tabindex="0"></div>

@@ -21,12 +21,26 @@
 			<result column="TITLE" property="title"/>
 			<result column="TEAMNAME" property="teamname"/>
 			<result column="CONT" property="cont"/>
+			<result column="HIT" property="hit"/>
+			<result column="WRITEDATE" property="writedate"/>
+			<result column="SIDO" property="sido"/>
+			<result column="CH_PATTERN" property="ch_pattern"/>
+			<result column="CH_START" property="ch_start"/>
+			<result column="CH_END" property="ch_end"/>
+			<result column="REMOVED_OK" property="removed_ok"/>
+			<result column="CLOSED_OK" property="closed_ok"/>
 			<result column="DEAD_OK" property="dead_ok"/>
+
 		</association>
 
 		<association javaType="kr.or.ssff.member.domain.MemberDTO" property="memberDTO">
 			<id column="MEMBER_NAME" property="member_name"/>
+			<result column="MEMBER_NO" property="member_no"/>
+			<result column="MEMBER_ID" property="member_id"/>
+			<result column="MEMBER_PWD" property="member_pwd"/>
 			<result column="MEMBER_PROFILE" property="member_profile"/>
+			<result column="MEMBER_INTRODUCE" property="member_introduce"/>
+			<result column="MEMBER_ENABLED" property="member_enabled"/>
 		</association>
 
 	</resultMap>

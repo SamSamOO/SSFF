@@ -31,7 +31,7 @@ public class ApplyMemberDTO {
 	private Integer attendance_days;
 	
 	private RecruitBoardDTO recruitBoardDTO;
-
+	private MemberDTO memberDTO;
 } // end class
 
 
