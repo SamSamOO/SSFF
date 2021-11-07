@@ -105,13 +105,5 @@
             <jsp:include page="/WEB-INF/commons/footer.jsp"></jsp:include>
 </body>
 <!----------------Body 종료----------------------->
-<script>
-    $('#pagination-demo').twbsPagination({
-        totalPages: 35,
-        visiblePages: 7,
-        onPageClick: function (event, page) {
-            $('#page-content').text('Page ' + page);
-        }
-    });
-</script>
+
 </html>

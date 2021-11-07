@@ -258,9 +258,9 @@ public class StudyInsController implements InitializingBean, DisposableBean {
         Objects.requireNonNull(service);
         if (service.modify(studyIns)) {
             rttrs.addFlashAttribute("result", "success");
-        }
+        } // if
 
-        return "redirect:studyIns/board/detail";
+        return "redirect:/studyIns/board/list";
     } // studyBoardDetailModify
 
     /*

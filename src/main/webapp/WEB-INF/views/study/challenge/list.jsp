@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 <!----------------Head 시작----------------------->
@@ -36,7 +36,7 @@
                     <!--Subheader : 서브헤더 페이지 제목란 시작-->
                     <div class="subheader py-2 py-lg-6" id="kt_subheader">
                         <div
-                                class="w-100 d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+                            class="w-100 d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
                             <!--begin::Info-->
                             <div class="d-flex align-items-center flex-wrap mr-1">
                                 <!--begin::Page Heading-->
@@ -46,7 +46,7 @@
                                     <!--Page Title : 페이지 제목 종료-->
                                     <!--Breadcrumb : 로드맵 시작-->
                                     <ul
-                                            class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
+                                        class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
                                         <li class="breadcrumb-item">
                                             <a href="" class="text-muted">프로젝트</a>
                                         </li>
@@ -90,11 +90,11 @@
                                     <div class="dropdown-to-sort">
 
 
-                                        <div class="dropdown-label">유형 : </div>
+                                        <div class="dropdown-label">유형 :</div>
 
                                         <div class="dropdown">
                                             <button class="btn btn-secondary dropdown-toggle" type="button"
-                                                     data-toggle="dropdown" aria-haspopup="true"
+                                                    data-toggle="dropdown" aria-haspopup="true"
                                                     aria-expanded="false">
                                                 유형을 선택해 주세요
                                             </button>
@@ -105,7 +105,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="dropdown-label">지역 : </div>
+                                        <div class="dropdown-label">지역 :</div>
 
                                         <div class="dropdown">
                                             <button class="btn btn-secondary dropdown-toggle" type="button"
@@ -198,19 +198,11 @@
                                 </div>
 
 
-
-
-
-
-
-
-
                                 <!----------------------------------------------------------------------------------------------------------------------------->
                             </div>
                             <!--카드 Body 종료-->
                         </div>
                         <!--풀 사이즈 카드 종료 / 카드 필요 없으면 여기서까지 밀기☆-->
-
 
 
                         <!--대시보드 종료-->
