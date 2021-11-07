@@ -3,6 +3,7 @@ package kr.or.ssff.mapper;
 import java.util.List;
 
 import kr.or.ssff.member.domain.ApplyMemberDTO;
+import kr.or.ssff.member.domain.MemberVO;
 
 
 /*
@@ -15,5 +16,8 @@ public interface MemberMapper {
 
 	// 1. 특정 스터디의 멤버 조회 : 신지혜 
 	public abstract List<ApplyMemberDTO> getApplyMemberList(Integer r_idx);
+
+	// 2. 전체 회원 목록 조회 : 신지혜 
+	public abstract List<MemberVO> getMemberList();
 	
 } // end interface

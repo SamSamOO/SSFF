@@ -4,6 +4,7 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.or.ssff.mapper.MemberMapper">
 
+	<!--  RecruitBoard와 ApplyMember멤버 조인을 위해 result Mqp생성  : 신지혜 -->  
 	<resultMap type="kr.or.ssff.member.domain.ApplyMemberDTO" id="applyMemberMap">
 		<id column="APPLY_IDX" property="apply_idx"/>
 		<result column="R_IDX" property="r_idx"/>
@@ -24,23 +25,31 @@
 		</association>
 	</resultMap>
 
-
 	
-		<!--  스터디 멤버 조회 : 신지혜 / 민주 리스트 출력화면에서 쓰려면 문구 추가하면 되니까 얘기해줘! -->
+		<!--  스터디 멤버 조회 : 신지혜  -->
 	<select 
 		id="getApplyMemberList"
 		parameterType="Integer"
-		resultMap ="applyMemberMap">       
-		
-SELECT /*+ member_name_asc(apply_member) */ * 
-FROM (SELECT r.r_idx, r.teamname, a.apply_idx,a.member_Name, a.study_join_arciwf, a.study_join_change_date, a.study_boss_yn, a.attendance_days 
-FROM recruit_board r JOIN  apply_member a on r.r_idx=a.r_idx) 
-WHERE r_idx = #{r_idx}			
-AND study_join_arciwf='i'
-
-
+		resultMap ="applyMemberMap">
+		<![CDATA[
+		SELECT /*+ member_name_asc(apply_member) */ * 
+		FROM (SELECT r.r_idx, r.teamname, a.apply_idx,a.member_Name, a.study_join_arciwf, a.study_join_change_date, a.study_boss_yn, a.attendance_days 
+		FROM recruit_board r JOIN  apply_member a on r.r_idx=a.r_idx) 
+		WHERE r_idx > #{r_idx} and r_idx < 9020
+		AND study_join_arciwf='i'
+]]>
 	</select>
 
+		<!--  전체 회원 조회 : 신지혜  -->
+	<select 
+		id="getMemberList"
+		resultType="kr.or.ssff.member.domain.MemberVO">       
+		
+		SELECT /*+ index_asc(member) */ * 
+		FROM member
+
+	</select>
+	
 </mapper>
 
 

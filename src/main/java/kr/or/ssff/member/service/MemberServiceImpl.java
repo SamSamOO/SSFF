@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import kr.or.ssff.mapper.MemberMapper;
 import kr.or.ssff.member.domain.ApplyMemberDTO;
+import kr.or.ssff.member.domain.MemberVO;
 import lombok.AllArgsConstructor;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
@@ -47,11 +48,20 @@ public class MemberServiceImpl implements MemberService, InitializingBean, Dispo
     public String get() {
         return null;
     }
-
+    
+    
+	  /* 전체 회원리스트를 조회 (member table) 
+	   * 매개변수:  
+	   * 반환	: 전체 회원리스트 
+	   * 작성자	: 신지혜 
+	   */
     @Override
-    public List<String> getList() {
-        return null;
-    }
+    public List<MemberVO> getMemberList() {
+		log.debug("getList() invoked");
+		List<MemberVO> memberList = this.mapper.getMemberList();
+
+        return memberList; 
+    } // getList
 
     @Override
     public List<String> getListPerPage() {
@@ -93,6 +103,8 @@ public class MemberServiceImpl implements MemberService, InitializingBean, Dispo
 	public void afterPropertiesSet() throws Exception {
 		// TODO Auto-generated method stub
 		
-	} // afterPropertiesSet
+	}
+
+
 } // end 
 

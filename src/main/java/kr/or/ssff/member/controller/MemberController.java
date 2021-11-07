@@ -100,7 +100,7 @@ public class MemberController {
         return "/member/studyList";
     } // studyListGo
 
-    /* 참여신청자/ 멤버목록 모달 민주랑 합치기 전에 여기서 먼저 작업 
+    /* 참여신청자, 멤버목록 모달 민주랑 합치기 전에 여기서 먼저 작업 
      * 매개변수:
      * 반환: 스터디목록 뷰
      * 작성자: 신지혜 
@@ -111,8 +111,11 @@ public class MemberController {
       log.debug("studyModalTest() is invoked");
       
 		List<ApplyMemberDTO> applyMemberList = this.service.getApplyMemberList(r_idx); 
+		List<MemberVO> memberList = this.service.getMemberList();
 		log.info("\t + >>>>>>>>>>>>>>>>applyMemberList:{}", applyMemberList);	
 		log.info("\t+ list size: {}", applyMemberList.size()); 
+		
+		model.addAttribute("memberList", memberList); 
 		model.addAttribute("applyMemberList", applyMemberList); 
     } // studyModalTest
     
