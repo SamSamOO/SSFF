@@ -272,6 +272,8 @@ public class StudyInsController implements InitializingBean, DisposableBean {
     public String studyBoardPostGo() {
         log.debug("studyBoardPostGo() is invoked");
 
+
+
         return "/studyIns/board/post";
     } // studyBoardPostGo
 

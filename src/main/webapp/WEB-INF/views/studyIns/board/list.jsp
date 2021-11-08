@@ -28,7 +28,7 @@
 
 
 
-                self.location = "/studyIns/board/post";
+                self.location = "/studyIns/board/postGo";
             });
         });
     </script>
@@ -53,7 +53,6 @@
             <!------------------Header Wrapper : 메뉴 탭 종료------------------>
             <!--컨테이너 시작-->
             <div class="d-flex flex-row flex-column-fluid container">
-
                 <table class="table">
                     <thead>
                     <tr>
@@ -115,6 +114,7 @@
 
 
                     </tbody>
+
                 </table>
 
             </div>
