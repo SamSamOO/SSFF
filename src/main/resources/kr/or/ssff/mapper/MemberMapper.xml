@@ -4,7 +4,7 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.or.ssff.mapper.MemberMapper">
 
-	<!--  RecruitBoard와 ApplyMember멤버 조인을 위해 result Mqp생성  : 신지혜 -->  
+	<!--  RecruitBoard와 ApplyMember멤버, 기본 member table 조인을 위해 result Mqp생성  : 신지혜 -->
 	<resultMap type="kr.or.ssff.member.domain.ApplyMemberDTO" id="applyMemberMap">
 		<id column="APPLY_IDX" property="apply_idx"/>
 		<result column="R_IDX" property="r_idx"/>
@@ -46,7 +46,7 @@
 	</resultMap>
 
 	
-		<!--  스터디 멤버 조회 : 신지혜  -->
+		<!--  스터디 멤버 + 프로필사진(tn_member) + 스터디팀명(tn_recruit_board) 조회 : 신지혜  -->
 	<select 
 		id="getApplyMemberList"
 		parameterType="Integer"
@@ -58,8 +58,9 @@
 															 JOIN member m
 																		on a.member_Name = m.member_Name)
 		WHERE r_idx > #{r_idx} and r_idx < 9020
+		]]>
 
-]]>
+		<!-- //TODO WHERE절 Test를 위해 and 조건 / 추후 단항조건으로 변경예정-->
 	</select>
 
 		<!--  전체 회원 조회 : 신지혜  -->
