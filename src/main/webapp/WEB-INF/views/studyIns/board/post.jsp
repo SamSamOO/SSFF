@@ -137,7 +137,11 @@
                                                 <td></td>
                                             </tr>
                                             <tr>
-
+                                                <td colspan="4"></td>
+                                                <td colspan="2">
+                                                    <button type="submit" id="submitBtn">등록하기</button>
+                                                    <button type="button" id="listBtn">목록으로</button>
+                                                </td>
                                             </tr>
                                         </table>
                                     </form>
