@@ -2,6 +2,7 @@ package kr.or.ssff.mapper;
 
 import java.util.List;
 import kr.or.ssff.studyIns.domain.StudyInsVO;
+import kr.or.ssff.studyIns.model.StudyInsDTO;
 import org.apache.ibatis.annotations.Select;
 
 
@@ -16,4 +17,6 @@ public interface StudyInsMapper {
     public StudyInsVO read(Integer cont_No);
 
     public boolean remove(Integer cont_No);
+
+    public int update(StudyInsDTO studyIns);
 }

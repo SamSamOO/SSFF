@@ -4,6 +4,7 @@ import java.util.List;
 
 import kr.or.ssff.member.domain.ApplyMemberDTO;
 import kr.or.ssff.member.domain.ApplyMemberVO;
+import kr.or.ssff.member.domain.MemberVO;
 /*
 
  */
@@ -20,8 +21,8 @@ public interface MemberService {
     // 4. 특정 게시글 상세조회
     public abstract String get();
 
-    // 5. 전체 목록 조회
-    public abstract List<String> getList();
+    // 5. 전체 회원 목록 조회 : 신지혜
+    public abstract List<MemberVO> getMemberList();
 
     //5. 목록조회 with paging
     public abstract List<String> getListPerPage();

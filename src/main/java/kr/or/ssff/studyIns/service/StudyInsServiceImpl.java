@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Objects;
 import kr.or.ssff.mapper.StudyInsMapper;
 import kr.or.ssff.studyIns.domain.StudyInsVO;
+import kr.or.ssff.studyIns.model.StudyInsDTO;
 import lombok.AllArgsConstructor;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
@@ -70,6 +71,21 @@ public class StudyInsServiceImpl implements StudyInsService, InitializingBean, D
 
         return mapper.remove(cont_No);
     }
+    /* 게시물을 수정하는 함수입니다. (SI_BOARD table)
+     * 매개변수: 게시물 번호
+     * 반환	:  해당 게시판
+     * 작성자	: 박상준
+     */
+
+    @Override
+    public boolean modify(StudyInsDTO studyIns) {
+        log.debug("modify(board) invoked");
+
+        Objects.requireNonNull(mapper);
+        int affectedRows = mapper.update(studyIns);
+
+        return (affectedRows == 1) ? true : false;
+    } // modify
 
     @Override
     public void destroy() throws Exception {

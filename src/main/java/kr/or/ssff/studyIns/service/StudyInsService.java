@@ -2,7 +2,7 @@ package kr.or.ssff.studyIns.service;
 
 import java.util.List;
 import kr.or.ssff.studyIns.domain.StudyInsVO;
-import org.apache.ibatis.annotations.Mapper;
+import kr.or.ssff.studyIns.model.StudyInsDTO;
 
 /*
 
@@ -18,6 +18,8 @@ public interface StudyInsService {
     //03. 게시물 삭제 : 박상준
     public abstract boolean remove(Integer cont_no);
 
+    //04. 게시물 수정 : 박상준
+    public abstract boolean modify(StudyInsDTO studyIns);
 } // end interface
 
 
