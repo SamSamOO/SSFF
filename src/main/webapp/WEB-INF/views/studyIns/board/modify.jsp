@@ -101,7 +101,7 @@
 
                                             <tr>
                                                 <td class="row"><label for="cont">내용 : </label>
-                                                    <input id="cont" maxlength="50" value="${detail.cont}" name="cont">
+                                                    <input id="cont" maxlength="5000" value="${detail.cont}" name="cont">
                                                 </td>
                                             </tr>
 
