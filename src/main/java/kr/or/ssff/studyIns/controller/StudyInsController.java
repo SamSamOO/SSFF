@@ -1,5 +1,6 @@
 package kr.or.ssff.studyIns.controller;
 
+import java.rmi.server.ServerCloneException;
 import java.util.Objects;
 import kr.or.ssff.studyIns.domain.StudyInsVO;
 import kr.or.ssff.studyIns.model.StudyInsDTO;
@@ -283,8 +284,16 @@ public class StudyInsController implements InitializingBean, DisposableBean {
      * 반환: 스터디 게시물 상세 뷰단
      * */
     @PostMapping("/board/post")
-    public String studyBoardPost(StudyInsDTO studyInsDTO) {
+    public String studyBoardPost(StudyInsDTO studyInsDTO,RedirectAttributes rttrs) {
         log.debug("studyBoardPost({}) is invoked", "studyInsDTO = " + studyInsDTO);
+
+        //파일 업로드 처리
+        String fileName = null;
+
+        Objects.requireNonNull(service);
+        if (service.insert(studyInsDTO)) {
+            rttrs.addFlashAttribute("result", "success");
+        } // if
 
         return "redirect:studyIns/board/detail";
     } // studyBoardPost
