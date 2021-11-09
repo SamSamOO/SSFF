@@ -19,4 +19,6 @@ public interface StudyInsMapper {
     public boolean remove(Integer cont_No);
 
     public int update(StudyInsDTO studyIns);
+
+    public int insert(StudyInsDTO studyInsDTO);
 }

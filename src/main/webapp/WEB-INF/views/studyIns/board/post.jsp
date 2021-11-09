@@ -7,8 +7,20 @@
 
 <head>
     <title>게시물 상세 페이지입니다</title>
+    <style>
+        /* 첨부파일을 드래그할 영역의 스타일 */
+        .fileDrop {
+            width: 300px;
+            height: 70px;
+            border: 2px dotted black;
+            background-color: floralwhite;
+        }
+    </style>
 
     <!--head.html Include-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+
     <jsp:include page="/WEB-INF/commons/head.jsp"></jsp:include>
 
     <script>
@@ -89,7 +101,7 @@
                             <!--카드 바디 시작-->
                             <div class="card-header border-0 pt-5 card-body mt-5">
                                 <div class="d-flex flex-row flex-column-fluid container" style="">
-                                    <form action="/studyIns/board/post" method="post">
+                                    <form action="/studyIns/board/post" method="post" enctype="multipart/form-data">
 
                                         <input type="hidden" name="cont_No" value="<c:out value='${detail.cont_No}'/> "/>
                                         <table style="width: 100%">
@@ -137,7 +149,14 @@
                                                 <td></td>
                                             </tr>
                                             <tr>
-                                                <td colspan="4"></td>
+                                                <td colspan="2">
+                                                    첨부파일 등록
+                                                    <!-- 첨부파일 등록영역 -->
+                                                    <div class="fileDrop"></div>
+                                                    <!-- 첨부파일의 목록 출력영역 -->
+                                                    <div id="uploadedList"></div>
+                                                </td>
+
                                                 <td colspan="2">
                                                     <button type="submit" id="submitBtn">등록하기</button>
                                                     <button type="button" id="listBtn">목록으로</button>
@@ -224,6 +243,55 @@
     jQuery(document).ready(function () {
         KTQuilDemos.init();
     });
+
+    //이미지 파일 여부 판단
+    function checkImageType(fileName) {
+        let pattern = /jpg|gif|png|jpeg/i;
+        return fileName.match(pattern);
+    }
+
+    //업로드 파일 정보
+    function getFileInfo(fullName) {
+        let fileName, imgsrc, getLink, fileLink;
+
+        //이미지 파일일 경우
+        if (checkImageType(fullName)) {
+            //이미지 파일 경로(썸네일)
+            imgsrc = "/upload/displayFile?fileName=" + fullName;
+            console.log(imgsrc);
+
+            //업로드 파일명
+            fileLink = fileName.substr(14);
+            console.log(fileLink);
+
+            //날짜별 디렉토리 추출
+            let front = fullName.substr(0, 12);
+            console.log(front);
+
+            // s_ 를제거한 업로드 이미지 파일명
+            let end = fullName.substr(14);
+            console.log(end);
+
+            //원본 이미지 파일 디렉토리
+            getLink = "/upload/displayFile?fileName=" + front + end;
+
+            console.log(getLink);
+            //이미지 파일이 아닌 경우
+        } else {
+            //UUID 를 제외한 원본 파일명
+            fileLink = fullName.substr(12);
+            console.log(fileLink);
+
+            //일반 파일 디렉토리
+            getLink = "/upload/displayFile/fileName=" + fullName;
+            console.log(getLink);
+        }
+        // 목록에 출력할 원본파일명
+        fileName = fileLink.substr(fileLink.indexOf("_") + 1);
+        console.log(fileName);
+        // { 변수:값 } json 객체 리턴
+        return {fileName: fileName, imgsrc: imgsrc, getLink: getLink, fullName: fullName};
+    }
 
 
 </script>

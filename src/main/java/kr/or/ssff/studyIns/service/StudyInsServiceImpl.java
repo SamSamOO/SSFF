@@ -25,6 +25,20 @@ public class StudyInsServiceImpl implements StudyInsService, InitializingBean, D
     @Setter(onMethod_ = @Autowired)
     private StudyInsMapper mapper;
 
+    /* 게시글의 생성 + 첨부파일업로드 (SI_BOARD +Study_Ins_File table)
+     * 매개변수: StudyInsDTO +
+     * 반환	: 게시글 리스트
+     * 작성자	: 박상준
+     */
+    @Override
+    public boolean insert(StudyInsDTO studyInsDTO) {
+        log.info("insert({}) is invoked", "studyInsDTO = " + studyInsDTO);
+
+        Objects.requireNonNull(mapper);
+
+        int affectedRows = mapper.insert(studyInsDTO);
+        return (affectedRows == 1) ? true : false;
+    } //insert
 
     /* 게시글의 목록을 조회하는 함수입니다. (SI_BOARD table)
      * 매개변수: 없음

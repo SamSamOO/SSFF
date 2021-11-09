@@ -20,6 +20,9 @@ public interface StudyInsService {
 
     //04. 게시물 수정 : 박상준
     public abstract boolean modify(StudyInsDTO studyIns);
+
+    //05.  게시물 생성 : 박상준
+    public abstract boolean insert(StudyInsDTO studyInsDTO);
 } // end interface
 
 
